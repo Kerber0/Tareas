@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<programas>
+  <programa nombre="Firefox">
+<licencias> GPL</licencias>  
+  <licencias> MPL</licencias>  
+  </programa>
+   <programa nombre="LibreOffice">
+<licencias> LGPL</licencias>  
+  </programa>
+   <programa nombre="Inkscape">
+<licencias> GPL</licencias>  
+  </programa>
+</programas>
