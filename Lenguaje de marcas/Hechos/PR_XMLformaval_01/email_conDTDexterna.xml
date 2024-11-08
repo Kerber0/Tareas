@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE email SYSTEM "emailDTD.dtd">
+<email>
+<para>hhh@gmail.com</para>
+<cc>h200@gmail.com</cc>
+<cco>klm@edu.xunta.gal</cco>
+<asunto>convocatoria opos</asunto>
+<cuerpo>Remito documento con .....</cuerpo>
+</email>
