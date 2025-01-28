@@ -198,31 +198,48 @@ UNLOCK TABLES;
 	select * from artigo, pedido, linea_ped where lp_numped = pe_numped and ar_id = lp_idartigo and pe_dataped < "2002-01-01";
 	
     18. Obter parellas de artigos onde a cantidade en stock do primeiro é 5 veces o stock do segundo.
+	
 	select a1.ar_descricion, a1.ar_stock, a2.ar_descricion, a2.ar_stock 
 	from artigo as a1, artigo as a2 
 	where a1.ar_stock  = (a2.ar_stock*5);
 	
     19. Obter as parellas de clientes que viven na mesma cidade.
 	
+	select c1.CL_NOME, c1.CL_CIDADE, c2.CL_NOME, c2.CL_CIDADE FROM CLIENTE AS c1, cliente AS c2 where
+	c1.CL_CIDADE = c2.cl_cidade and c1.CL_NOME != c2.cl_nome; 
 	
     20. Obter as parellas de clientes que fixeron pedidos na mesma data.
 	
+	select c1.cl_nome, p1.pe_dataped, c2.cl_nome, p2.pe_dataped from cliente as c1, cliente as c2,
+	pedido as p1, pedido as p2 where c1.cl_id = p1.pe_idcliente 
+	and c2.cl_id = p2.pe_idcliente and p1.pe_dataped = p2.pe_dataped and c1.CL_NOME != c2.CL_NOME;
 	
     21. Obter aqueles artigos dos que se fixeron pedidos en cantidades iguais en diferentes pedidos.
 	Evitar as parellas triviais formadas pola repetición dun mesmo pedido. Obter tamén o número e data 
 	dos pedidos nos que se produciu esa coincidencia e a cantidade pedida.
 	
+
+
+
 	
     22. Obter o número de artigos, os prezos máximo e mínimo e medio.
 	
+	select count(*) as cantArt, max(ar_prezo) as PMaximo, min(ar_prezo) as PMinimo, 
+	AVG(ar_prezo) as mediaPrecio 
+	from artigo;
 	
     23. Obter o número total de artigos dos que hai algunha unidade en stock.
 	
+	select count(ar_stock) from artigo where ar_stock != 0;
 	
     24. Obter, para cada cidade, cantos clientes hai.
 	
+	select sum(lp_canped * ar_prezo) as TotalPedido, lp_idartigo, ar_id, lp_numped 
+	from artigo, linea_ped 
+	where ar_id = lp_idartigo and lp_numped = 1;
 	
     25. Obter, para cada data, cantos pedidos se fixeron nesa data.
+	
 	
 	
     26. Obter cantos pedidos fixo cada cliente
@@ -245,3 +262,17 @@ UNLOCK TABLES;
 	
     32. Listar todos os artigos cunha cantidade en stock maior ou igual que a suma de tódalas 
 	cantidades pedidas do mesmo artigo.
+	
+	33. Listar os artigos solicitados en pedidos pendentes de envío, xunto coa suma das cantidades pedidas de cada artigo.
+	
+	
+    34. Obter o mesmo que no exercicio anterior pero mostrando só aqueles casos nos que a suma de cantidades pedidas 
+	sexa inferior ao stock actual mais o stock pendente de recibir. Mostrar ademais o “superávit” de cada artigo.
+	
+	
+    35. Obter o día do mes, da semana, mes e ano da data de cada pedido.	
+	
+	
+    36. Se dividimos os clientes segundo a inicial do seu nome en dous grupos, o primeiro deles formado 
+	por aqueles clientes cuxo nome comenza por letras entre a A e a J e o segundo polos que teñen un nome que 
+	comeza por letras entre a K e a Z, obter o número de pedidos realizados polos clientes de cada grupo.

@@ -1,0 +1,17 @@
+Escribir as expresións XPath para obter os seguintes conxuntos de nodos.
+1) Os comentarios.
+//comment()
+
+2) Os comentarios da película "Leaving Las Vegas".
+//película[título="Leaving Las Vegas"]/comment()
+//película[título="Leaving Las Vegas"]//comment()
+
+3) As películas de xénero "Drama".
+//película[xénero='Drama']
+
+4) Os nomes das actrices.
+//actor[sexo="muller"]/nome
+
+5) Os elementos non baleiros (conteñen algún texto).
+//*[text()]
+y la niego: //*[not(text())]

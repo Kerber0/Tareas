@@ -39,12 +39,16 @@ count(//máquina [hardware/tipo='Semitorre'][config/OS='Windows XP'])
 //máquina[hardware/procesador/@num_nucleos]/config/OS
 //máquina[descendant::procesador/@num_nucleos]/config/OS
 *** no funciona esta: //máquina[//procesador/@num_nucleos]/config/OS
-
+ver explicación en el punto siguiente.
 8. Os nomes das máquinas que empreguen memoria con tecnoloxía "DDR2".
 //máquina[hardware/memoria/@tecnoloxía='DDR2']/@nome
 //máquina[descendant::memoria/@tecnoloxía='DDR2']/@nome
 *** no funciona: //máquina[//memoria/@tecnoloxía='DDR2']/@nome
 *** no funciona: //máquina[//@tecnoloxía='DDR2']/@nome
+En estos dos últimos casos, el contexto del predicado es todo el documento,
+esto significa que si encuentra algun nodo que cumple la condición del predicado,
+da por válido este. En nuestro caso encuentra algún @tecnoloxía='DDR2', lo que da
+por válido el predicado y muestra todos los nodos máquina.
 9. As máquinas con procesador da marca "Intel" e gravadora de DVD.
 //máquina[hardware/procesador/@marca="Intel"][hardware/gravadora/@tipo="DVD"]
 //procesador[@marca="Intel"]/../gravadora[@tipo="DVD"]/ancestor::máquina
