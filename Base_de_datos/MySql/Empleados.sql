@@ -99,8 +99,8 @@ limit 1;
 
 /*21*/
 
-select dep_nome, dep_num, avg(emp_salario) from dep, emp
-where dep_num = emp_depnum and avg(emp_salario) > 900;
+select dep_nome, dep_num, avg(emp_salario), min(emp_salario) from dep, emp
+where dep_num = emp_depnum group by dep_num having min(emp_salario)>900;
 
 /*22*/
 
@@ -119,16 +119,32 @@ where dep_num = emp_depnum and dep_num = 30;
 
 /*25*/
 
+select emp_depnum, count(emp_nome) from emp
+group by emp_depnum having count(emp_nome) > 3;
 
 /*26*/
 
+select emp_nome from emp
+where emp_nome in (select emp_xefe from emp);
 
 /*27*/
 
+select distintc (emp_posto) as Puesto, count(*) as numero from emp
+group by emp_posto; 
+
+/*28*/
 
 
 
 
+/*29*/
 
+select emp_nome from emp
+where emp_nome not in (select emp_xefe from emp where emp_xefe is not null);
 
+/*30*/
 
+select a1.emp_nome as empleado, a2.emp_nome as jefe, (a2.emp_salario-a1.emp_salario) as diferencia
+from emp as a1 join emp as a2
+where a1.emp_xefe = a2.emp_num order by diferencia;
+ 
