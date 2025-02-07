@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="ejemplo_01_plantillaVacia.xsl"?>
 <biblioteca>
   <libro>
     <titulo>La vida está en otra parte</titulo>
@@ -17,3 +16,4 @@
     <fechaPublicacion año="1969"/>
   </libro>
 </biblioteca>
+
