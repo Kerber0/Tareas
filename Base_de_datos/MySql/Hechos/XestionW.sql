@@ -250,18 +250,34 @@ UNLOCK TABLES;
 	
     28. Obter para cada liña de pedido, a cantidade pedida, o prezo unitario e o importe da mesma
 	
+	select lp_numlinea, sum(lp_canped), ar_prezo, (ar_prezo*lp_canped) as importe
+	from linea_ped join artigo
+	on lp_idartigo = ar_id
+	group by lp_numlinea;
 	
     29. Obter o importe total de cada pedido.
 	
+	select pe_numped, sum(ar_prezo* lp_canped) from pedido 
+	join artigo join linea_pedn 
+	on  pe_numped = lp_numped and lp_idartigo = ar_id
+	group by pe_numped;
 	
     30. Obter o importe total dos pedidos con máis de dúas liñas de pedido.
 	
+	select lp_numped, sum(ar_prezo* lp_canped) as "importe total"
+	from  artigo join linea_ped
+	on lp_idartigo = ar_id
+	where lp_numped in (select lp_numped from linea_ped
+	group by lp_numped having count(*) > 2)
+	group by lp_numped;
 	
     31. Obter en cantas cidades distintas ten clientes a librería.
 	
 	
     32. Listar todos os artigos cunha cantidade en stock maior ou igual que a suma de tódalas 
 	cantidades pedidas do mesmo artigo.
+	
+	
 	
 	33. Listar os artigos solicitados en pedidos pendentes de envío, xunto coa suma das cantidades pedidas de cada artigo.
 	

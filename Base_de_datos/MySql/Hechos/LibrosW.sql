@@ -149,3 +149,201 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2012-11-06 10:05:02
+
+/*1*/
+select ti_titulos, ti_anopub 
+from titulos;
+
+/*2*/
+select au_nome 
+from autores;
+
+/*3*/
+select ed_cidade 
+from editoriais;
+
+/*4*/
+select distint ed_cidade 
+from editoriais;
+
+/*5*/
+select ed_nome, ed_nomeempresa, ed_enderezo, ed_telefono 
+from editoriais 
+where ed_cidade="New York";
+
+/*6*/
+select ti_titulo, ti_anopub 
+from titulos
+where ti_materia="Mysql";
+
+/*7*/
+select ti_titulo             /*Esta opcion es la más usada en el mundo(join)*/
+from titulos join editoriais
+on ti_idedit=ed_id
+and ed_nome="Yourdon";
+
+/*8*/
+select ed_nome              /*Esta es la forma de hacerlo con where*/
+from editoriais, titulos
+where ti_idedit=ed_id
+and ti_materia="C++";
+
+/*8  Join*/
+select ed_nome
+from editoriais join titulos
+on ti_idedit=ed_id
+where ti_materia="C++";
+
+/*8  Alias*/
+select ed_nome
+from editoriais as e join titulos as t
+on ti_idedit=ed_id
+where ti_materia="C++";
+
+/*9*/
+select ti_titulo
+from titulos, editoriais
+where ti_idedit=ed_id
+and ed_estado="Il";
+
+/*10*/
+select ed_nome
+from titulos, editoriais
+where ti_idedit=ed_id
+and ed_cidade="Berkeley"
+and ti_materia="SQL";
+
+/*11*/
+select au_nome
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn
+and ti_materia="Visual Basic";
+
+/*  Join*/
+select au_nome
+from autores join tituloautor join titulos
+on au_id=ta_idautor
+and ta_isbn=ti_isbn
+and ti_materia="Visual Basic";
+
+/*12*/
+select au_nome, ti_titulo
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn
+and ti_materia="Visual Basic";
+
+/*13*/
+select ti_titulo, ti_materia
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn 
+and au_nome="Bard, Dick";
+
+/*14*/
+select ti_materia
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn 
+and au_anon>=1940
+and au_anon<=1950;
+
+/*15*/
+select ed_nome
+from editoriais, titulos
+where ti_idedit=ed_id
+and ti_anopub>1993;
+
+/*16*/
+select ed_nome
+from editoriais, titulos
+where ti_idedit=ed_id
+and ti_anopub=1993;
+
+/*17*/
+select au_nome, ti_titulo
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn 
+and ti_anopub=1993
+and ti_materia="sql";
+
+/*18*/
+select ed_nome, ti_titulo
+from editoriais, titulos
+where ti_idedit=ed_id
+and ed_cidade="Anchorage"
+and ti_materia="Visual Basic";
+
+/*19*/
+select ti_titulo
+from titulos
+where ti_materia="SQL Server"
+or ti_materia="Btrieve";
+
+/*20*/
+select ti_titulo, ti_anopub, au_nome, au_anon
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn
+and (ti_anopub-au_anon)=48;
+
+/*21*/
+select ti_titulo
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn
+and au_nome like "W%";
+
+/*22*/
+select au_nome, au_anon
+from autores
+where au_nome like "_%w%";
+
+/*23*/
+select au_nome
+from autores
+where au_nome like "%z%" and au_nome like "%y%";
+
+/*24*/
+select au_nome
+from autores
+where au_nome like "%c%" 
+and au_nome like "%k%" 
+and au_nome like "%z%";
+
+/*25*/
+select au_nome
+from autores
+where au_nome like "%ckz%";
+
+/*26*/
+select ti_titulo
+from titulos, editoriais
+where ti_idedit=ed_id
+and ed_nome in ("Prentice Hall", "Osborne");
+
+/*27*/
+select ti_titulo
+from titulos
+where ti_materia="Visual Basic" or ti_materia="SQL" or ti_materia="Prolog";
+
+/*28*/
+select ed_nome
+from editoriais
+order by ed_nome;
+
+/*29*/
+select au_nome, au_anon
+from autores
+order by au_anon desc;
+
+/*30*/
+select ti_titulo, ti_materia, au_nome
+from autores, titulos, tituloautor
+where au_id=ta_idautor and ta_isbn=ti_isbn and ti_anopub < 1990
+order by ti_materia, au_nome;
+
+/*31*/
+SELECT DISTINCT au_nome
+FROM autores join titulos join tituloautor on au_id = ta_idautor on ta_isbn = ti_isbn
+where ti_anopub = (
+select ti_anopub
+from titulos
+where ti_titulo = 'Guide to Oracle');
+
+/*32*/

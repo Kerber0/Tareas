@@ -147,4 +147,54 @@ where emp_nome not in (select emp_xefe from emp where emp_xefe is not null);
 select a1.emp_nome as empleado, a2.emp_nome as jefe, (a2.emp_salario-a1.emp_salario) as diferencia
 from emp as a1 join emp as a2
 where a1.emp_xefe = a2.emp_num order by diferencia;
+
+/*31*/
+
+select em1.emp_nome, em2.emp_nome from emp as em1, emp as em2
+where em1.emp_depnum = em2.emp_depnum
+and em1.emp_nome> em2.emp_nome;
+
+/*32*/
+
+select e1.emp_nome, e1.emp_salario, e2.emp_nome, e2.emp_salario from emp as e1, emp as e2
+where e1.emp_salario> e2.emp_salario and e1.emp_xefe = e2.emp_xefe;
+
+/*33*/
+
+select emp_nome from emp
+where emp_xefe = (select emp_num from emp where emp_nome = "Saco");
+
+/*34*/
+
+select emp_nome from emp
+where emp_xefe = (select emp_num from emp where emp_nome = "Saco") 
+or emp_xefe = (select emp_num from emp where emp_nome ="Rei");
+
+/*35*/
+
+ select e1.emp_nome, e1.emp_salario, e2.emp_nome, e2.emp_salario from emp as e1, emp as e2
+where e1.emp_salario= e2.emp_salario and e1.emp_depnum < e2.emp_depnum;
+ 
+ /*36*/
+ 
+ select e1.emp_nome, e2.emp_nome from emp as e1, emp as e2
+ where e1.emp_posto = e2.emp_posto and e1.emp_nome> e2.emp_nome;
+ 
+ /*37*/
+ 
+ select e1.emp_nome as empleado, e2.emp_nome as jefe from emp as e1, emp as e2
+ where e1.emp_xefe = e2.emp_num
+ and e1.emp_depnum != e2.emp_depnum;
+ 
+ /*38*/
+ 
+ select dep_nome, dep_loc, emp_nome, emp_posto
+ 
+ 
+/*39*/
+ 
+ /*40*/
+ 
+ 
+ 
  
