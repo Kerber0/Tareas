@@ -31,7 +31,7 @@ and emp_xefe = 7698;
 
 select emp_nome
 from emp
-where emp_salario not >1000
+where emp_salario not <= 1000
 and emp_xefe not = 7698;
 
 /*11*/
@@ -81,7 +81,7 @@ from emp;
 
 /*18*/
 
-select emp_num, emp_nome, max(emp_salario), min(emp_salario) from emp 
+select emp_num, emp_nome from emp 
 where emp_salario = (select max(emp_salario) from emp) 
 or emp_salario = (select min(emp_salario) from emp);
 
@@ -134,6 +134,9 @@ group by emp_posto;
 
 /*28*/
 
+select dep_nome, sum(emp_salario)
+from dep join empon emp_depnum = dep_num
+group by dep_nome;
 
 
 
@@ -189,12 +192,31 @@ where e1.emp_salario= e2.emp_salario and e1.emp_depnum < e2.emp_depnum;
  /*38*/
  
  select dep_nome, dep_loc, emp_nome, emp_posto
+ from dep left join emp on dep_num = emp_depnum;
  
  
 /*39*/
+
+select dep_nome, emp_nome 
+from emp left join dep on dep_num = emp_depnum;
  
  /*40*/
  
+ select emp_nome, dep_nome 
+ from  emp left join dep on dep_num = emp_depnum
+ union
+ select emp_nome, dep_nome
+ from  emp right join dep on dep_num = emp_depnum;
  
+ /*View*/
+
+create view empleados_saco as select * from emp
+where emp_xefe = (select emp_num from emp where emp_nome = "Saco");
  
- 
+select * from empleados_saco
+ order by emp_salario desc limit 3;
+
+create view empleadosbienpagados as  select * 
+from emp where emp_salario >= (select avg(emp_salario) from emp);
+
+select * from empleadosbienpagados;
