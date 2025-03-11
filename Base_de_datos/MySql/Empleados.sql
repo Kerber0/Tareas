@@ -1,17 +1,43 @@
 
 /*1*/
 
+select *  from emp
+where emp_posto = "Administrativo" ;
+
 /*2*/
+
+select dep_nome from dep
+group by dep_nome desc; 
 
 /*3*/
 
+SELECT emp_nome, emp_posto, emp_salario  
+FROM emp  
+ORDER BY emp_salario ASC;
+
+
 /*4*/
+
+ select emp_nome, emp_salario, emp_comm  
+FROM emp  
+JOIN dep  ON emp_depnum = dep_num  
+WHERE dep_nome = 'Vendas';
 
 /*5*/
 
+select emp_nome, emp_comm from emp;
+
 /*6*/
 
+SELECT emp_nome, emp_salario AS Salario_Actual, (emp_salario + 1000) AS Novo_Salario  
+FROM emp  
+WHERE emp_depnum = 30;
+
+
 /*7*/
+
+select emp_nome, emp_salario, emp_comm from emp
+where emp_comm >= (emp_salario/2);
 
 /*8*/
 
