@@ -80,13 +80,16 @@ public class GestorJuegos {
             System.out.println("No se ha podido vender el juego con código ABC123\n");
         }
     }
+
     private void mostrarStockJuegos() {
         System.out.println("Stock de juegos:");
         for (Map.Entry<String, Integer> juego : stockJuegos.entrySet()) {
             System.out.println(juego.getKey() + ": " + juego.getValue());
         }
     }
+
     // Metodo que registra un lote de juegos en el mapa de juegos de la tienda
+
     public int registrarLoteJuegos(String[] codigos, int[] unidadesPorCodigo) {
         int juegosRegistrados = 0;
 //comprobamos que las longitudes de los arrays sean iguales
@@ -117,6 +120,7 @@ public class GestorJuegos {
         }
         return juegosRegistrados;
     }
+
     private int obtenerStockActual() {
         int stockActual = 0;
         for (int cantidad : stockJuegos.values()) {
@@ -124,6 +128,7 @@ public class GestorJuegos {
         }
         return stockActual;
     }
+
     public int venderJuego(String codigo, int cantidad) {
         try {
 // Comprobamos el formato del código: ABC123
@@ -146,11 +151,13 @@ public class GestorJuegos {
         }
         return 0;
     }
+
     private void validarCantidad(int cantidad) throws IllegalArgumentException {
         if (cantidad <= 0) {
             throw new IllegalArgumentException("La cantidad debe ser mayor que 0");
         }
     }
+
     private void validarCodigo(String codigo) throws IllegalArgumentException {
         if (codigo.length() != 6) {
             throw new IllegalArgumentException("El código debe tener 6 caracteres");
