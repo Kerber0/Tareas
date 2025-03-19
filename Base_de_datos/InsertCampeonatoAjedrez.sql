@@ -139,14 +139,12 @@ insert into persona values ( "11111111A", 600102030, "Antonio Rodríguez Pérez"
 
 
 
-/*3a*/
-/*3a*/
-/*3a*/ 
-/*3a*/ 
-/*3a*/
-/*3a*/
-/*3a*/
-/*3a*/
+/*3b*/
+/*3c*/
+/*3d*/ 
+/*3e*/ 
+/*3f*/
+
        
 select * from persona;
 
