@@ -150,7 +150,7 @@ insert into reconocimiento(codigo, fecha, duracion, dni_medico, dni_paciente)
 insert into ingreso(codigo, fecha_entrada, fecha_alta, dni_paciente, numero_planta, numero_cama)
 	values('I01', '2020/01/15', '2020/01/20', '11111112B', 1, 9),
     ('I02', '2020/02/26', null, '11111113C', 3, 7),
-    ('I03', '2020/01/20', '2020/01/22', '11111115E', 2, 6);
+    ('I03', '2020/01/20', '2020/01/22','11111115E', 2, 6);
     
 /* d */
 delete from reconocimiento where dni_medico = '11111111A';
@@ -174,3 +174,9 @@ insert into reconocimiento_medico(dni_medico, codigo_reconocimiento)
 	select dni_medico, codigo
 		from reconocimiento;
 		
+alter table reconocimiento drop foreign key reconocimiento_ibfk_1;
+alter table reconocimiento drop column dni_medico;
+
+
+
+show create table medico;
