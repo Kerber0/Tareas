@@ -1,0 +1,137 @@
+/*1*/
+
+delimiter //
+
+CREATE PROCEDURE  incremetar (inout numero INTEGER)
+BEGIN
+set numero = numero +1;
+
+END //
+
+delimiter;
+
+/*  
+para ejecutar el procedimiento hay que asignarle el valor a una variable de la siguiente manera
+
+set @variable = 4;
+
+una vez tenemos la variable se puede ejecutar el procedimiento ingresandolo como parametro
+
+call incrementar(@variable);
+
+se comprueba que el procedimiento se ejecuto correctamente con 
+
+select  @variable; 
+
+deberia devolver el valor de la variable inicializada +1
+
+*/
+
+
+/*2*/
+
+delimiter //
+
+CREATE PROCEDURE semana (numDia int)
+BEGIN
+case numDia
+	WHEN 1 then select "Lunes" as "Día";
+	WHEN 2 then select "Martes" as "Día";
+	WHEN 3 then select "Miércoles" as "Día";
+	WHEN 4 then select "Jueves" as "Día";
+	WHEN 5 then select "Viernes" as "Día";
+	WHEN 6 then select "Sábado" as "Día";
+	WHEN 7 then select "Domingo" as "Día";
+end case;
+END //
+
+delimiter;
+
+
+/*3*/
+
+DELIMITER //
+
+CREATE PROCEDURE TresLetrasMaiusculas(IN entrada VARCHAR(255))
+BEGIN
+    DECLARE resultado VARCHAR(255);
+    SET resultado = CONCAT(UPPER(LEFT(entrada, 3)), SUBSTRING(entrada, 4));
+    SELECT resultado AS Maiusculas;
+END //
+
+DELIMITER ;
+
+/*3.1*/
+
+DELIMITER //
+
+CREATE PROCEDURE TresLetrasMaiusculas(IN entrada VARCHAR(255))
+BEGIN
+    select upper(left (entrada, 3)) as "Solo 3 Mayus";
+END //
+
+DELIMITER ;
+
+/*4*/
+
+DELIMITER //
+
+CREATE PROCEDURE concatenar (entrada1 VARCHAR(10), entrada2 varchar(10))
+BEGIN
+    DECLARE total VARCHAR(20);
+    SET total = UPPER(CONCAT(entrada1, entrada2));
+    SELECT total AS resultado;
+END //
+
+DELIMITER ;
+
+/*4.1*/
+CREATE PROCEDURE CONCATENAR1 (entrada1 char(10), entrada2 char(10))
+BEGIN
+select upper(concat(entrada1, entrada2);
+
+end//
+
+/*5*/
+
+CREATE FUNCTION hipotenusa ( A DOUBLE, B DOUBLE)
+RETURNS DOUBLE
+DETERMINISTIC
+BEGIN
+    DECLARE h DOUBLE (6,2);
+    SET h = SQRT(pow(A,2)+pow(B,2))
+    RETURN h;
+END //
+
+
+
+
+/*5.1*/
+
+CREATE FUNCTION hipotenusa1( A DOUBLE, B DOUBLE)
+RETURNS DOUBLE
+DETERMINISTIC
+BEGIN
+    DECLARE h DOUBLE (6,2);
+    SET h = SQRT(A * A + B * B);
+    RETURN h;
+END //
+
+
+/*6*/
+
+
+/*7*/
+
+CREATE FUNCTION divisible(A DOUBLE, B DOUBLE)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    IF MOD(A, B) = 0 THEN
+        RETURN 1 as resultado;
+    ELSE
+        RETURN 0 as resultado;
+    END IF;
+END //
+
+
