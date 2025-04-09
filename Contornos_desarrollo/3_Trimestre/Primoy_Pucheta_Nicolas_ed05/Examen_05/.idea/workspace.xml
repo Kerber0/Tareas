@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a8179c4-ca71-41b7-8733-c0ca4ed3d440" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Primoy_Nicolas_examenTema5/src/Cli.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Primoy_Nicolas_examenTema5/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Primoy_Nicolas_examenTema5/src/Multimedia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Primoy_Nicolas_examenTema5/src/Peliculas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Primoy_Nicolas_examenTema5/src/Series.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Casa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Casa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Cli.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Cli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Departamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Inmueble.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Programacion/Java/Examen_Modelo_2/Simulacro/src/Inmueble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Base_de_datos/programación/EjerciciosProcedimientos1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Base_de_datos/programación/EjerciciosProcedimientos1.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../Programacion" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2v5M3QPCK9ZvFPUte6cRI7MynYO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a24nicolasmpp/Desktop/Programacion/Java&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\a24nicolasmpp\Desktop\Programacion\Java" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a8179c4-ca71-41b7-8733-c0ca4ed3d440" name="Changes" comment="" />
+      <created>1743430282040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743430282040</updated>
+    </task>
+    <servers />
+  </component>
+</project>

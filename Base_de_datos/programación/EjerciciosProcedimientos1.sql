@@ -1,8 +1,11 @@
 /*EjerciciosProcedimientos1*/
 
 /*1*/
+delimiter //
 create procedure ListaxeEmpregados() 
-begin select * from emp; end//
+begin select emp_numero, emp_nome, emp_posto, dep_nome from emp
+join dep on emp_depnum = dep_nome; end//
+
 
 /*2*/
 call ListaxeEmpregados()//
