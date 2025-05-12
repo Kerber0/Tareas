@@ -1,0 +1,102 @@
+<!DOCTYPE html> <!-- Define el tipo de documento HTML5 -->
+<html lang="es"> <!-- Idioma del contenido: español -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres en UTF-8 -->
+    <title>Top Series y Películas</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="index.css"> <!-- Enlace al archivo de estilos CSS -->
+</head>
+
+<body>
+    <div class="container"> <!-- Contenedor principal del sitio -->
+
+        <header> <!-- Encabezado del sitio -->
+            <div class="carousel-container"> <!-- Contenedor del carrusel -->
+                <div class="carousel-images"> <!-- Contenedor de imágenes en carrusel -->
+                    <!-- Imágenes de series y películas en el carrusel -->
+                    <img src="Imagenes/series/Fleabag.jpg" alt="Fleabag">
+                    <img src="Imagenes/peliculas/oppenhimer.jpg" alt="Oppenheimer">
+                    <!-- ... (resto de las imágenes, con rutas corregidas a "/") -->
+                </div>
+            </div>
+
+            <h1>Top Series y Películas</h1> <!-- Título principal del sitio -->
+
+            <nav> <!-- Menú de navegación -->
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="series.html">Series</a></li>
+                    <li><a href="peliculas.html">Películas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section> <!-- Sección de bienvenida -->
+            <h2>Bienvenidos</h2>
+            <p>
+                Este sitio presenta una selección de las mejores series y películas,
+                basadas en popularidad, crítica y audiencia.
+            </p>
+
+            <h3>Comparativa de Puntuaciones</h3>
+
+            <div class="tablas-container"> <!-- Contenedor de las dos tablas -->
+
+                <!-- Tabla de Series -->
+                <table>
+                    <caption>Top 5 Series </caption>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Puntuación IMDb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Fila con título + enlace a IMDb -->
+                        <tr>
+                            <td class="td-con-boton">
+                                Breaking Bad
+                                <a href="https://www.imdb.com/title/tt0903747/" target="_blank">
+                                    <img class="boton" src="Imagenes/imdb.png" alt="IMDb">
+                                </a>
+                            </td>
+                            <td>⭐ 9.5</td>
+                        </tr>
+                        <!-- ... (resto de las series) -->
+                    </tbody>
+                </table>
+
+                <!-- Tabla de Películas -->
+                <table>
+                    <caption>Top 5 Películas </caption>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Puntuación IMDb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Fila con título + enlace a IMDb -->
+                        <tr>
+                            <td class="td-con-boton">
+                                Parásitos
+                                <a href="https://www.imdb.com/title/tt6751668/" target="_blank">
+                                    <img class="boton" src="Imagenes/imdb.png" alt="IMDb">
+                                </a>
+                            </td>
+                            <td>⭐ 8.6</td>
+                        </tr>
+                        <!-- ... (resto de las películas) -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer> <!-- Pie de página -->
+            <p>© 2025 Top Series y Películas</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

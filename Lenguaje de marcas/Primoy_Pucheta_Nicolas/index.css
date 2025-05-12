@@ -14,6 +14,33 @@ header {
     margin-bottom: 40px;
 }
 
+.th {
+    display: flex;
+}
+
+.td-con-boton {
+    position: relative;
+    padding-right: 70px; /* deja espacio para el botón sin que el texto lo solape */
+}
+
+.boton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.enlace-completo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit; /* para que herede el color del texto del td */
+}
+
 .logo {
     width: 60px;
     vertical-align: middle;
@@ -33,22 +60,38 @@ nav ul li {
 }
 
 nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #444;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 25px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    transition: all 0.3s ease;
+    /* Transición suave */
 }
+
+nav ul li a:hover {
+    background-color: #555;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    /* Efecto de sombra más fuerte */
+    transform: translateY(-3px);
+    /* Efecto de levantamiento al hacer hover */
+}
+
 
 section {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
     background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    color: #333;
-}
+
 
 footer {
     text-align: center;
@@ -56,6 +99,7 @@ footer {
     background-color: #333;
     color: white;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 /* --- Tabla de puntuaciones --- */
@@ -72,10 +116,11 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th, td, tbody {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
+    font-weight: bold;
 }
 
 th {
@@ -90,8 +135,62 @@ caption {
 
 /* Contenedor principal para centrar el contenido */
 .container {
-    width: 95%; /* Ajusta el ancho según lo desees */
-    max-width: 1200px; /* Limita el ancho máximo */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 0 20px; /* Agrega espacio interior en los laterales */
+    width: 95%;
+    /* Ajusta el ancho según lo desees */
+    max-width: 1200px;
+    /* Limita el ancho máximo */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+    padding: 0 20px;
+    /* Agrega espacio interior en los laterales */
 }
+
+.carousel-container {
+    position: relative;
+    /* Posicionamiento relativo para elementos internos */
+    overflow: hidden;
+    /* Oculta lo que se desborde */
+    width: 100%;
+    height: 400px;
+    /* Altura del carrusel */
+    margin-top: 20px;
+}
+
+/* --- Imágenes en línea para desplazamiento tipo carrusel --- */
+.carousel-images {
+    display: flex;
+    animation: slide 30s infinite linear;
+    /* Bucle infinito con duración ajustada */
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* --- Animación de desplazamiento horizontal del carrusel --- */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-100%);
+    }
+
+    40% {
+        transform: translateX(-200%);
+    }
+
+    60% {
+        transform: translateX(-300%);
+    }
+
+    80% {
+        transform: translateX(-400%);
+    }
+
+    100% {
+        transform: translateX(-500%);
+    }
+}
+

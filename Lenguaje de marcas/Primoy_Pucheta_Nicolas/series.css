@@ -31,12 +31,9 @@ nav ul {
     gap: 15px; /* Espacio entre elementos */
 }
 
-nav ul li {
-    display: inline; /* Muestra los elementos en línea */
-}
-
 /* --- Estilo de los enlaces del menú --- */
 nav ul li a {
+    
     display: block; /* Ocupa todo el área del bloque */
     padding: 10px 20px; /* Espaciado interno */
     background-color: #444; /* Fondo gris oscuro */
@@ -64,10 +61,6 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-/* --- Títulos principales y secundarios --- */
-h1, h2 {
-    color: #333; /* Texto oscuro */
-}
 
 /* --- Pie de página --- */
 footer {
@@ -76,6 +69,7 @@ footer {
     background-color: #333; /* Fondo oscuro */
     color: white; /* Texto blanco */
     margin-top: 40px; /* Separación desde el contenido superior */
+    margin-bottom: 40px;
 }
 
 /* --- Contenedor general (útil para centrar y limitar ancho) --- */
@@ -150,16 +144,12 @@ footer {
 
 /* --- Imágenes en línea para desplazamiento tipo carrusel --- */
 .carousel-images {
-    display: flex; /* Layout en línea */
-    animation: slide 100s infinite linear; /* Animación continua e infinita */
-}
-
-/* --- Estilo individual de cada imagen del carrusel --- */
-.carousel-images img {
-    width: 25%; /* Tamaño relativo al ancho del contenedor */
-    height: 25%;
+    display: flex;
+    animation: slide 30s infinite linear; /* Bucle infinito con duración ajustada */
+    width: 25%;
+    height: 100%;
     object-fit: cover;
-    flex-shrink: 0; /* No se reduce cuando el espacio es limitado */
+    flex-shrink: 0;
 }
 
 /* --- Animación de desplazamiento horizontal del carrusel --- */
