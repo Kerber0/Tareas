@@ -1,151 +1,215 @@
 /* --- Estilos base y generales para la página --- */
 body {
-    font-family: Arial, sans-serif; /* Tipo de fuente general */
-    background-color: #f4f4f4; /* Color de fondo claro */
+    font-family: Arial, sans-serif;
+    /* Tipo de fuente general */
+    background-color: #f4f4f4;
+    /* Color de fondo claro */
     margin: 0;
     padding: 0;
 }
 
 /* --- Encabezado principal --- */
 header {
-    background-color: #333; /* Fondo oscuro */
-    color: white; /* Texto en blanco */
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Texto centrado */
-    margin-bottom: 40px; /* Espacio inferior antes del siguiente elemento */
+    background-color: #333;
+    /* Fondo oscuro */
+    color: white;
+    /* Texto en blanco */
+    padding: 20px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Texto centrado */
+    margin-bottom: 40px;
+    /* Espacio inferior antes del siguiente elemento */
 }
 
 /* --- Logo dentro del encabezado --- */
 .logo {
-    width: 60px; /* Ancho del logo */
-    vertical-align: middle; /* Alineación vertical con el texto */
+    width: 60px;
+    /* Ancho del logo */
+    vertical-align: middle;
+    /* Alineación vertical con el texto */
 }
 
 /* --- Barra de navegación horizontal --- */
 nav ul {
-    list-style-type: none; /* Quita los puntos de lista */
+    list-style-type: none;
+    /* Quita los puntos de lista */
     padding: 0;
     margin: 10px 0 0 0;
-    display: flex; /* Flexbox horizontal */
-    justify-content: center; /* Centra los elementos */
-    gap: 15px; /* Espacio entre elementos */
+    display: flex;
+    /* Flexbox horizontal */
+    justify-content: center;
+    /* Centra los elementos */
+    gap: 15px;
+    /* Espacio entre elementos */
 }
 
 /* --- Estilo de los enlaces del menú --- */
 nav ul li a {
-    
-    display: block; /* Ocupa todo el área del bloque */
-    padding: 10px 20px; /* Espaciado interno */
-    background-color: #444; /* Fondo gris oscuro */
-    color: white; /* Texto blanco */
-    text-decoration: none; /* Quita subrayado */
-    font-weight: bold; /* Negrita */
-    border-radius: 25px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: all 0.3s ease; /* Transición suave al hacer hover */
+
+    display: block;
+    /* Ocupa todo el área del bloque */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    background-color: #444;
+    /* Fondo gris oscuro */
+    color: white;
+    /* Texto blanco */
+    text-decoration: none;
+    /* Quita subrayado */
+    font-weight: bold;
+    /* Negrita */
+    border-radius: 25px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: all 0.3s ease;
+    /* Transición suave al hacer hover */
 }
 
 /* --- Efecto al pasar el mouse por los enlaces del menú --- */
 nav ul li a:hover {
-    background-color: #555; /* Fondo más oscuro */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
-    transform: translateY(-3px); /* Levanta ligeramente el botón */
+    background-color: #555;
+    /* Fondo más oscuro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra más marcada */
+    transform: translateY(-3px);
+    /* Levanta ligeramente el botón */
 }
 
 /* --- Secciones de contenido principales --- */
 section {
-    padding: 20px; /* Espaciado interno */
-    max-width: 1200px; /* Ancho máximo de la sección */
-    margin: auto; /* Centrado horizontal */
-    background-color: white; /* Fondo blanco */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px;
+    /* Espaciado interno */
+    max-width: 1200px;
+    /* Ancho máximo de la sección */
+    margin: auto;
+    /* Centrado horizontal */
+    background-color: white;
+    /* Fondo blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
 }
 
 
 /* --- Pie de página --- */
 footer {
-    text-align: center; /* Texto centrado */
-    padding: 15px; /* Espaciado interno */
-    background-color: #333; /* Fondo oscuro */
-    color: white; /* Texto blanco */
-    margin-top: 40px; /* Separación desde el contenido superior */
+    text-align: center;
+    /* Texto centrado */
+    padding: 15px;
+    /* Espaciado interno */
+    background-color: #333;
+    /* Fondo oscuro */
+    color: white;
+    /* Texto blanco */
+    margin-top: 40px;
+    /* Separación desde el contenido superior */
     margin-bottom: 40px;
 }
 
 /* --- Contenedor general (útil para centrar y limitar ancho) --- */
 .container {
-    width: 95%; /* Ocupa el 95% del ancho disponible */
-    max-width: 1200px; /* No se expande más allá de 1200px */
-    margin: 0 auto; /* Centrado horizontal */
-    padding: 0 20px; /* Espaciado lateral interno */
+    width: 95%;
+    /* Ocupa el 95% del ancho disponible */
+    max-width: 1200px;
+    /* No se expande más allá de 1200px */
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: 0 20px;
+    /* Espaciado lateral interno */
 }
 
 /* --- Cuadrícula para mostrar varias tarjetas de series --- */
 .series-grid {
-    display: grid; /* Grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Columnas responsivas */
-    gap: 20px; /* Espacio entre tarjetas */
-    margin-top: 30px; /* Separación superior */
+    display: grid;
+    /* Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    /* Columnas responsivas */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+    margin-top: 30px;
+    /* Separación superior */
 }
 
 /* --- Estilo de cada tarjeta de serie --- */
 .serie-card {
-    background-color: #fff; /* Fondo blanco */
-    border: 2px solid #ccc; /* Borde gris claro */
-    border-radius: 10px; /* Esquinas redondeadas */
-    overflow: hidden; /* Oculta el contenido que se desborde */
-    text-align: center; /* Centra el texto */
-    transition: transform 0.3s ease, border-color 0.3s; /* Transiciones suaves */
+    background-color: #fff;
+    /* Fondo blanco */
+    border: 2px solid #ccc;
+    /* Borde gris claro */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    overflow: hidden;
+    /* Oculta el contenido que se desborde */
+    text-align: center;
+    /* Centra el texto */
+    transition: transform 0.3s ease, border-color 0.3s;
+    /* Transiciones suaves */
 }
 
 /* --- Efecto hover sobre la tarjeta --- */
 .serie-card:hover {
-    transform: translateY(-5px); /* Se levanta un poco */
-    border-color: #555; /* Cambia el color del borde */
+    transform: translateY(-5px);
+    /* Se levanta un poco */
+    border-color: #555;
+    /* Cambia el color del borde */
 }
 
 /* --- Estilo general del enlace dentro de la tarjeta --- */
 .serie-card a {
-    text-decoration: none; /* Sin subrayado */
-    color: inherit; /* Hereda el color del texto */
-    display: block; /* Ocupa todo el espacio disponible */
+    text-decoration: none;
+    /* Sin subrayado */
+    color: inherit;
+    /* Hereda el color del texto */
+    display: block;
+    /* Ocupa todo el espacio disponible */
 }
 
 /* --- Imagen dentro de la tarjeta --- */
 .serie-card img {
-    width: 100%; /* Ocupa el 100% del ancho de la tarjeta */
-    height: 220px; /* Altura fija */
-    object-fit: cover; /* Recorta la imagen para cubrir sin deformarse */
-    border-bottom: 1px solid #ccc; /* Línea separadora inferior */
+    width: 100%;
+    /* Ocupa el 100% del ancho de la tarjeta */
+    height: 220px;
+    /* Altura fija */
+    object-fit: cover;
+    /* Recorta la imagen para cubrir sin deformarse */
+    border-bottom: 1px solid #ccc;
+    /* Línea separadora inferior */
 }
 
 /* --- Título de la tarjeta --- */
 .serie-card h3 {
     margin: 10px 0 5px 0;
-    font-size: 16px; /* Tamaño moderado */
+    font-size: 16px;
+    /* Tamaño moderado */
 }
 
 /* --- Estrellas o puntuación de la serie --- */
 .serie-card .rating {
     font-size: 14px;
-    color: #f39c12; /* Color naranja (estilo estrellas) */
+    color: #f39c12;
+    /* Color naranja (estilo estrellas) */
     margin-bottom: 10px;
     display: inline-block;
 }
 
 /* --- Contenedor del carrusel de imágenes --- */
 .carousel-container {
-    position: relative; /* Posicionamiento relativo para elementos internos */
-    overflow: hidden; /* Oculta lo que se desborde */
+    position: relative;
+    /* Posicionamiento relativo para elementos internos */
+    overflow: hidden;
+    /* Oculta lo que se desborde */
     width: 100%;
-    height: 400px; /* Altura del carrusel */
+    height: 400px;
+    /* Altura del carrusel */
     margin-top: 20px;
 }
 
 /* --- Imágenes en línea para desplazamiento tipo carrusel --- */
 .carousel-images {
     display: flex;
-    animation: slide 30s infinite linear; /* Bucle infinito con duración ajustada */
+    animation: slide 30s infinite linear;
+    /* Bucle infinito con duración ajustada */
     width: 25%;
     height: 100%;
     object-fit: cover;
@@ -157,18 +221,23 @@ footer {
     0% {
         transform: translateX(0);
     }
+
     20% {
         transform: translateX(-100%);
     }
+
     40% {
         transform: translateX(-200%);
     }
+
     60% {
         transform: translateX(-300%);
     }
+
     80% {
         transform: translateX(-400%);
     }
+
     100% {
         transform: translateX(-500%);
     }

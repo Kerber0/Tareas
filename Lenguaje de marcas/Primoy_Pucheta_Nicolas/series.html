@@ -1,78 +1,98 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Define que el documento es HTML5 -->
+<html lang="es"> <!-- Establece que el idioma principal de la página es español -->
 
 <head>
-    <meta charset="UTF-8">
-    <title>Top Series</title>
-    <!-- Enlace al archivo de estilos CSS -->
-    <link rel="stylesheet" href="series.css">
+    <meta charset="UTF-8"> <!-- Especifica que la codificación de caracteres es UTF-8 -->
+    <title>Top Series</title> <!-- Título que aparecerá en la pestaña del navegador -->
+    <link rel="stylesheet" href="series.css"> <!-- Enlace al archivo CSS para estilizar la página -->
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            
+
+    <div class="container"> <!-- Contenedor principal que organiza y centra el contenido -->
+
+        <header> <!-- Encabezado de la página -->
+
+            <!-- Contenedor para el carrusel de imágenes -->
             <div class="carousel-container">
-                <div class="carousel-images">
+                <div class="carousel-images"> <!-- Contenedor que aloja todas las imágenes del carrusel -->
                     <img src="Imagenes\series\BreakingBad.jpg" alt="Breaking Bad">
+                    <!-- Imagen de la serie Breaking Bad -->
                     <img src="Imagenes\series\Planet Earth II.jpg" alt="Planet Earth II">
+                    <!-- Imagen de Planet Earth II -->
                     <img src="Imagenes\series\Band of Brothers.jpg" alt="Band of Brothers">
-                    <img src="Imagenes\series\Chernobyl.jpg" alt="Chernobyl">
-                    <img src="Imagenes\series\The Wire.jpg" alt="The Wire">
+                    <!-- Imagen de Band of Brothers -->
+                    <img src="Imagenes\series\Chernobyl.jpg" alt="Chernobyl"> <!-- Imagen de Chernobyl -->
+                    <img src="Imagenes\series\The Wire.jpg" alt="The Wire"> <!-- Imagen de The Wire -->
                     <img src="Imagenes\series\Avatar The Last Airbender.jpg" alt="Avatar: The Last Airbender">
+                    <!-- Imagen de Avatar -->
                     <img src="Imagenes\series\Game of Thrones.jpg" alt="Game of Thrones">
-                    <img src="Imagenes\series\The Sopranos.jpg" alt="The Sopranos">
+                    <!-- Imagen de Game of Thrones -->
+                    <img src="Imagenes\series\The Sopranos.jpg" alt="The Sopranos"> <!-- Imagen de The Sopranos -->
                     <img src="Imagenes\series\Rick and Morty.jpg" alt="Rick and Morty">
+                    <!-- Imagen de Rick and Morty -->
                     <img src="Imagenes\series\BetterCallSaul.jpg" alt="Better Call Saul">
-                    <img src="Imagenes\series\Sherlock.jpg" alt="Sherlock">
+                    <!-- Imagen de Better Call Saul -->
+                    <img src="Imagenes\series\Sherlock.jpg" alt="Sherlock"> <!-- Imagen de Sherlock -->
                     <img src="Imagenes\series\the last of us.jpg" alt="The Last of Us">
-                    <img src="Imagenes\series\Fleabag.jpg" alt="Fleabag">
-                    <img src="Imagenes\series\Dark.jpg" alt="Dark">
+                    <!-- Imagen de The Last of Us -->
+                    <img src="Imagenes\series\Fleabag.jpg" alt="Fleabag"> <!-- Imagen de Fleabag -->
+                    <img src="Imagenes\series\Dark.jpg" alt="Dark"> <!-- Imagen de Dark -->
                     <img src="Imagenes\series\Peaky Blinders.jpg" alt="Peaky Blinders">
-                    <img src="Imagenes\series\Narcos.jpg" alt="Narcos">
+                    <!-- Imagen de Peaky Blinders -->
+                    <img src="Imagenes\series\Narcos.jpg" alt="Narcos"> <!-- Imagen de Narcos -->
                     <img src="Imagenes\series\Stranger Things.jpg" alt="Stranger Things">
+                    <!-- Imagen de Stranger Things -->
                     <img src="Imagenes\series\The Mandalorian.jpg" alt="The Mandalorian">
-                    <img src="Imagenes\series\The Crown.jpg" alt="The Crown">
+                    <!-- Imagen de The Mandalorian -->
+                    <img src="Imagenes\series\The Crown.jpg" alt="The Crown"> <!-- Imagen de The Crown -->
                 </div>
             </div>
 
-            <h1>Top Series</h1>
-            
-            <!-- Menú de navegación -->
+            <h1>Top Series</h1> <!-- Título principal de la página -->
+
+            <!-- Barra de navegación -->
             <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="series.html">Series</a></li>
-                    <li><a href="peliculas.html">Películas</a></li>
+                <ul> <!-- Lista de enlaces en la barra de navegación -->
+                    <li><a href="index.html">Inicio</a></li> <!-- Enlace a la página principal -->
+                    <li><a href="series.html">Series</a></li> <!-- Enlace a la página de series -->
+                    <li><a href="peliculas.html">Películas</a></li> <!-- Enlace a la página de películas -->
                 </ul>
             </nav>
         </header>
 
-        <!-- Sección principal con las series -->
+        <!-- Sección que contiene las tarjetas de series -->
         <section>
-            <h2>Top 24 Series IMDb </h2>
-            <div class="series-grid">
+            <h2>Top 24 Series IMDb </h2> <!-- Subtítulo de la sección -->
+            <div class="series-grid"> <!-- Contenedor para organizar las tarjetas de las series -->
+
+                <!-- Cada tarjeta contiene una serie con su imagen, título y calificación -->
                 <div class="serie-card">
                     <a href="https://www.imdb.com/title/tt0903747/" target="_blank">
-                        <img src="Imagenes\series\BreakingBad.jpg" alt="Breaking Bad">
-                        <h3>Breaking Bad</h3>
-                        <div class="rating">⭐ 9.5</div>
+                        <!-- Enlace a IMDb para Breaking Bad -->
+                        <img src="Imagenes\series\BreakingBad.jpg" alt="Breaking Bad"> <!-- Imagen de Breaking Bad -->
+                        <h3>Breaking Bad</h3> <!-- Título de la serie -->
+                        <div class="rating">⭐ 9.5</div> <!-- Calificación de la serie -->
                     </a>
                 </div>
 
                 <div class="serie-card">
                     <a href="https://www.imdb.com/es-es/title/tt5491994/" target="_blank">
+                        <!-- Enlace a IMDb para Planet Earth II -->
                         <img src="Imagenes\series\Planet Earth II.jpg" alt="Planet Earth II">
-                        <h3>Planet Earth II</h3>
-                        <div class="rating">⭐ 9.4</div>
+                        <!-- Imagen de Planet Earth II -->
+                        <h3>Planet Earth II</h3> <!-- Título de la serie -->
+                        <div class="rating">⭐ 9.4</div> <!-- Calificación de la serie -->
                     </a>
                 </div>
 
                 <div class="serie-card">
                     <a href="https://www.imdb.com/es-es/title/tt0185906/" target="_blank">
+                        <!-- Enlace a IMDb para Band of Brothers -->
                         <img src="Imagenes\series\Band of Brothers.jpg" alt="Band of Brothers">
-                        <h3>Band of Brothers</h3>
-                        <div class="rating">⭐ 9.4</div>
+                        <!-- Imagen de Band of Brothers -->
+                        <h3>Band of Brothers</h3> <!-- Título de la serie -->
+                        <div class="rating">⭐ 9.4</div> <!-- Calificación de la serie -->
                     </a>
                 </div>
 
@@ -257,7 +277,7 @@
 
         <!-- Pie de página del sitio -->
         <footer>
-            <p>© 2025 Top Series y Películas</p>
+            <p>© 2025 Top Series y Películas</p> <!-- Texto del pie de página -->
         </footer>
     </div>
 </body>

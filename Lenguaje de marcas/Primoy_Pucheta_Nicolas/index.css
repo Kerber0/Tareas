@@ -4,6 +4,11 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+.contenido-central {
+    margin: 0 160px;
 }
 
 header {
@@ -20,7 +25,7 @@ header {
 
 .td-con-boton {
     position: relative;
-    padding-right: 70px; /* deja espacio para el botón sin que el texto lo solape */
+    padding-right: 70px;
 }
 
 .boton {
@@ -38,7 +43,7 @@ header {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: inherit; /* para que herede el color del texto del td */
+    color: inherit;
 }
 
 .logo {
@@ -67,21 +72,15 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 25px;
-    /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
     transition: all 0.3s ease;
-    /* Transición suave */
 }
 
 nav ul li a:hover {
     background-color: #555;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    /* Efecto de sombra más fuerte */
     transform: translateY(-3px);
-    /* Efecto de levantamiento al hacer hover */
 }
-
 
 section {
     padding: 20px;
@@ -90,8 +89,6 @@ section {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-
 
 footer {
     text-align: center;
@@ -116,7 +113,7 @@ table {
     border-collapse: collapse;
 }
 
-th, td, tbody {
+th, td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
@@ -136,31 +133,27 @@ caption {
 /* Contenedor principal para centrar el contenido */
 .container {
     width: 95%;
-    /* Ajusta el ancho según lo desees */
     max-width: 1200px;
-    /* Limita el ancho máximo */
     margin: 0 auto;
-    /* Centra el contenedor horizontalmente */
     padding: 0 20px;
-    /* Agrega espacio interior en los laterales */
 }
 
+/* --- Carrusel --- */
 .carousel-container {
     position: relative;
-    /* Posicionamiento relativo para elementos internos */
     overflow: hidden;
-    /* Oculta lo que se desborde */
     width: 100%;
     height: 400px;
-    /* Altura del carrusel */
     margin-top: 20px;
 }
 
-/* --- Imágenes en línea para desplazamiento tipo carrusel --- */
 .carousel-images {
     display: flex;
-    animation: slide 30s infinite linear;
-    /* Bucle infinito con duración ajustada */
+    animation: slide 90s infinite linear;
+    height: 100%;
+}
+
+.carousel-images img {
     width: 25%;
     height: 100%;
     object-fit: cover;
@@ -172,25 +165,124 @@ caption {
     0% {
         transform: translateX(0);
     }
-
     20% {
         transform: translateX(-100%);
     }
-
     40% {
         transform: translateX(-200%);
     }
-
     60% {
         transform: translateX(-300%);
     }
-
     80% {
         transform: translateX(-400%);
     }
-
     100% {
         transform: translateX(-500%);
     }
 }
 
+/* --- Formulario de película --- */
+.formulario-pelicula {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulario-pelicula h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-pelicula form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-pelicula label {
+    font-weight: bold;
+}
+
+.formulario-pelicula input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario-pelicula button {
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-pelicula button:hover {
+    background-color: #555;
+}
+
+/* Publicidad lateral */
+.publicidad {
+    position: fixed;
+    top: 0;
+    width: 160px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #121212;
+    z-index: 999;
+    padding: 10px 0;
+}
+
+.publicidad.izquierda {
+    left: 0;
+}
+
+.publicidad.derecha {
+    right: 0;
+}
+
+.publicidad img {
+    width: 140px;
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.slider-subir {
+    display: flex;
+    flex-direction: column;
+    animation: scrollAdsUp 20s linear infinite;
+}
+
+.slider-bajar {
+    display: flex;
+    flex-direction: column;
+    animation: scrollAdsDown 20s linear infinite;
+}
+
+@keyframes scrollAdsUp {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scrollAdsDown {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
