@@ -1,0 +1,43 @@
+body {background-color: black;}
+
+nav {
+    background-color:rgb(141, 14, 14);
+    text-align: center;
+    }
+    .link{margin:40px;
+     font-size:18pt;
+    text-decoration: none;
+    color: white;}
+       
+    .link:hover{ color: black;}
+
+section {text-decoration: none ;
+        color: white;
+        font-family:Arial, Helvetica, sans-serif;
+            margin-left: 30px;
+            margin-right: 40px;
+       
+    }
+    .enlace{
+       text-decoration: none;
+       color: white;}
+    .enlace:hover{ color:rgb(141, 14, 14) ;}
+    footer{
+            background-color:black;
+            clear:both;
+            margin-top: 100px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-decoration: none ;
+        color: white;
+        font-family:Arial, Helvetica, sans-serif
+            }
+    .rs{margin:40px;
+             font-size:18pt;
+            text-decoration: none;
+            color: rgb(141, 14, 14);
+            border-style: solid;
+            border-radius: 25%;
+            }
+            .rs:hover{color: rgb(252, 251, 251);}
+            .T{color:rgb(141, 14, 14)}
