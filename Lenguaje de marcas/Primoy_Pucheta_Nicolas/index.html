@@ -2,97 +2,173 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Series y Películas</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-        .tablas-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        table {
-            width: 48%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
-        th {
-            background-color: #f0f0f0;
-        }
-        caption {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-
-    
-    <header>
-        <img src="logo.png" alt="Logo del sitio" class="logo">
-        <h1>Top Series y Películas</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="series.html">Series</a></li>
-                <li><a href="peliculas.html">Películas</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section>
-        <h2>Bienvenidos</h2>
-        <p>Este sitio presenta una selección de las mejores series y películas, basadas en popularidad, crítica y audiencia.</p>
-        <h3>Comparativa de Puntuaciones</h3>
-
-        <div class="tablas-container">
-            <table>
-                <caption>Top 5 Series </caption>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Puntuación IMDb</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><a href="https://www.imdb.com/title/tt0903747/" target="_blank">Breaking Bad</td><td>⭐ 9.5</td></tr>
-                    <tr><td><a href="https://www.imdb.com/title/tt4574334/" target="_blank">Stranger Things</td><td>⭐ 9.3</td></tr>
-                    <tr><td><a href="https://www.imdb.com/es-es/title/tt3032476/" target="_blank">Better Call Saul</td><td>⭐ 8.9</td></tr>
-                    <tr><td><a href="https://www.imdb.com/title/tt3581920/" target="_blank">The Last of Us</td><td>⭐ 8.8</td></tr>
-                    <tr><td><a href="https://www.imdb.com/title/tt4574334/" target="_blank">Stranger Things</td><td>⭐ 8.7</td></tr>
-                </tbody>
-            </table>
-           
-
-            <table>
-                <caption>Top 5 Películas </caption>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Puntuación IMDb</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><a href="https://www.imdb.com/title/tt6751668/" target="_blank">Parásitos </td><td>⭐ 8.6</td></tr>
-                    <tr><td><a href="https://www.imdb.com/title/tt15398776/" target="_blank">Oppenheimer</td><td>⭐ 8.4</td></tr>
-                    <tr><td><a href="https://www.imdb.com/es-es/title/tt4633694/" target="_blank">Spider-Man: Into the Spider-Verse</td><td>⭐ 8.4</td></tr>
-                    <tr><td><a href="https://www.imdb.com/es-es/title/tt2380307/" target="_blank">Coco</a></td><td>⭐ 8.4</td></tr>
-                    <tr><td><a href="https://www.imdb.com/title/tt7286456/" target="_blank">Joker</td><td>⭐ 8.4</td></tr>
-                </tbody>
-            </table>
+    <div class="publicidad izquierda">
+        <div class="slider-subir">
+            <img src="Imagenes/publicidad/feo.jpg" alt="Publicidad 1">
+            <img src="Imagenes/publicidad/pollo.jpg" alt="Publicidad 2">
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>© 2025 Top Series y Películas</p>
-    </footer>
-</div>
+    <div class="contenido-central">
+        <header>
+            <div class="carousel-container">
+                <div class="carousel-images">
+                    <img src="Imagenes/series/Fleabag.jpg" alt="Fleabag">
+                    <img src="Imagenes/peliculas/oppenhimer.jpg" alt="Oppenheimer">
+                    <img src="Imagenes/peliculas/Top Gun Maverick.jpg" alt="Top Gun: Maverick">
+                    <img src="Imagenes/series/Stranger Things.jpg" alt="Stranger Things">
+                    <img src="Imagenes/peliculas/Vengadores Endgame.jpg" alt="Avengers: Endgame">
+                    <img src="Imagenes/series/Rick and Morty.jpg" alt="Rick and Morty">
+                    <img src="Imagenes/peliculas/madmax.jpg" alt="Mad Max: Fury Road">
+                    <img src="Imagenes/peliculas/la habitacion.jpg" alt="Room">
+                    <img src="Imagenes/series/Game of Thrones.jpg" alt="Game of Thrones">
+                    <img src="Imagenes/series/Narcos.jpg" alt="Narcos">
+                    <img src="Imagenes/series/Dark.jpg" alt="Dark">
+                    <img src="Imagenes/series/Sherlock.jpg" alt="Sherlock">
+                    <img src="Imagenes/peliculas/Retrato de una mujer en llamas.jpg" alt="Portrait de la jeune fille en feu">
+                    <img src="Imagenes/series/The Wire.jpg" alt="The Wire">
+                    <img src="Imagenes/peliculas/interstellar.jpg" alt="Interstellar">
+                    <img src="Imagenes/peliculas/coco.jpg" alt="Coco">
+                    <img src="Imagenes/peliculas/tresanincuos en las afueras.jpg" alt="Three Billboards Outside Ebbing, Missouri">
+                    <img src="Imagenes/peliculas/inside out.jpg" alt="Inside Out">
+                    <img src="Imagenes/series/The Crown.jpg" alt="The Crown">
+                    <img src="Imagenes/peliculas/whiplash.jpg" alt="Whiplash">
+                    <img src="Imagenes/peliculas/Joker.jpg" alt="Joker">
+                    <img src="Imagenes/series/Planet Earth II.jpg" alt="Planet Earth II">
+                    <img src="Imagenes/peliculas/greenbook.jpg" alt="Green Book">
+                    <img src="Imagenes/peliculas/asilentvoice.jpg" alt="A Silent Voice">
+                    <img src="Imagenes/series/Peaky Blinders.jpg" alt="Peaky Blinders">
+                    <img src="Imagenes/peliculas/El viento se levanta.jpg" alt="The Wind Rise">
+                    <img src="Imagenes/series/BreakingBad.jpg" alt="Breaking Bad">
+                    <img src="Imagenes/series/Band of Brothers.jpg" alt="Band of Brothers">
+                    <img src="Imagenes/peliculas/Spiderman.PNG" alt="Spider-Man: Into the Spider-Verse">
+                    <img src="Imagenes/series/BetterCallSaul.jpg" alt="Better Call Saul">
+                    <img src="Imagenes/peliculas/parasitos.jpg" alt="Parásitos">
+                    <img src="Imagenes/peliculas/spiderman no way home.jpg" alt="Spiderman no way home">
+                    <img src="Imagenes/series/The Mandalorian.jpg" alt="The Mandalorian">
+                    <img src="Imagenes/peliculas/vengadores infinity war.jpg" alt="Avengers: Infinity War">
+                    <img src="Imagenes/series/Chernobyl.jpg" alt="Chernobyl">
+                    <img src="Imagenes/series/The Sopranos.jpg" alt="The Sopranos">
+                    <img src="Imagenes/series/Avatar The Last Airbender.jpg" alt="Avatar: The Last Airbender">
+                    <img src="Imagenes/series/the last of us.jpg" alt="The Last of Us">
+                </div>
+            </div>
+
+            <h1>Top Series y Películas</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="series.html">Series</a></li>
+                    <li><a href="peliculas.html">Películas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <h2>Bienvenidos</h2>
+            <p>Este sitio presenta una selección de las mejores series y películas, basadas en popularidad, crítica y audiencia.</p>
+            <h3>Comparativa de Puntuaciones</h3>
+
+            <div class="tablas-container">
+                <table>
+                    <caption>Top 5 Series</caption>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Puntuación IMDb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-con-boton">Breaking Bad <a href="https://www.imdb.com/title/tt0903747/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 9.5</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Chernobyl <a href="https://www.imdb.com/es-es/title/tt7366338/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 9.3</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Better Call Saul <a href="https://www.imdb.com/es-es/title/tt3032476/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.9</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">The Last of Us <a href="https://www.imdb.com/title/tt3581920/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.8</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Stranger Things <a href="https://www.imdb.com/title/tt4574334/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <caption>Top 5 Películas</caption>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Puntuación IMDb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-con-boton">Parásitos <a href="https://www.imdb.com/title/tt6751668/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.6</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Oppenheimer <a href="https://www.imdb.com/title/tt15398776/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.4</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Spider-Man:<br> Into the Spider-Verse <a href="https://www.imdb.com/es-es/title/tt4633694/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.4</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Coco <a href="https://www.imdb.com/es-es/title/tt2380307/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.4</td>
+                        </tr>
+                        <tr>
+                            <td class="td-con-boton">Joker <a href="https://www.imdb.com/title/tt7286456/" target="_blank" rel="noopener noreferrer"><img class="boton" src="Imagenes/imdb.png" alt="IMDb"></a></td>
+                            <td>⭐ 8.4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="formulario-pelicula">
+            <h2>¿Considera que falta alguna película? ¿Cuál?</h2>
+            <form action="#" method="post">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="puntuacion">Puntuación IMDb:</label>
+                <input type="number" id="puntuacion" name="puntuacion" step="0.1" min="0" max="10" required>
+
+                <label for="link">Enlace IMDb:</label>
+                <input type="url" id="link" name="link" placeholder="https://www.imdb.com/..." required>
+
+                <button type="submit">Agregar Película</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 Top Series y Películas</p>
+        </footer>
+    </div>
+
+    <div class="publicidad derecha">
+        <div class="slider-bajar">
+            <img src="Imagenes/publicidad/h&s.jpg" alt="Publicidad 3">
+            <img src="Imagenes/publicidad/feo.jpg" alt="Publicidad 4">
+            <img src="Imagenes/publicidad/rico.png" alt="Publicidad 5">
+        </div>
+    </div>
 </body>
 </html>
