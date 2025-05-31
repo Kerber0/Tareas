@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.ed06.app"},{"l":"org.ed06.model"}];updateSearchResults();
