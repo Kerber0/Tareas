@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--- <?xml-stylesheet type="text/xsl" href="filename.xsl" ?> -->
+<ciclo siglas="ASIR">
+ <módulo>Linguaxes de Marcas</módulo>
+ <módulo>Servizos de Rede</módulo>
+ <módulo>Fundamentos Hardware</módulo>
+</ciclo>

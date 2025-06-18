@@ -10,7 +10,7 @@ BioLocLite es una aplicación que permite
 + Notificación a las autoridades en caso de especies peligrosas
 + Interfaz en línea de comandos (CLI)
 
-### Cómo usar
+## Cómo usar
 
 1. Ejecuta el programa principal:
 
@@ -28,7 +28,7 @@ BioLocLite es una aplicación que permite
 
 **Nota:** Asegúrate de tener las imágenes en la carpeta `imagenes` para realizar las pruebas.
 
-#### Requisitos
+## Requisitos
 
 1. Java 17+
 2. IntelliJ IDEA o cualquier otro IDE compatible
@@ -36,7 +36,7 @@ BioLocLite es una aplicación que permite
    2. [Guía de instalación](https://www.jetbrains.com/help/idea/installation-guide.html)
 3. JUnit 5 para ejetutar los tests
 
-##### Formato de salida
+## Formato de salida
 
 | **Tipo de especie** |                     **Mensaje generado**                         |
 | :-----------------: | -----------------------------------------------------------------|
@@ -44,7 +44,7 @@ BioLocLite es una aplicación que permite
 | Rara                | "Especie rara. Registrar avitamiento."                           |
 | Invasora            | "¡ALERTA! Especie invsora detectada. Avisar a las autoridades."  |
 
-##### Autor
+## Autor
 
 Desarrollado por **Equipo BioLoc**, como parte del proyecto de asignatura *Entornos de Desarrollo.*
 
@@ -52,6 +52,6 @@ Desarrollado por **Equipo BioLoc**, como parte del proyecto de asignatura *Entor
 
 
 
-##### Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.

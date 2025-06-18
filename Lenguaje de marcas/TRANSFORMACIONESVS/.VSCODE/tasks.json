@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ejecutar transformación XSLT con Saxon",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "-jar",
+                "C:/saxon/saxon-he-11.4.jar",  // Ajusta la ruta según tu versión de Saxon
+                "-s:${file}", // Archivo XML de entrada (el archivo actualmente abierto en VS Code)
+                "-xsl:${fileDirname}/elaboraTablasMas64_templates.xsl", // Archivo XSLT en el mismo directorio
+                "-o:${fileDirname}/elaboraTablasMas64_templates_salida.html" // Archivo de salida
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

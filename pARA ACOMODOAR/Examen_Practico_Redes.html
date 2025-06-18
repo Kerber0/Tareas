@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f9ea; Examen pr&aacute;ctico de redes</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-examen-práctico-de-redes">🧪 Examen práctico de redes</h1>
+<p><strong>Herramienta: Cisco Packet Tracer</strong><br>
+<strong>Valor total: 5 puntos</strong></p>
+<hr>
+<h2 id="-topología-lógica">🌐 Topología lógica</h2>
+<h2 id=""><img src="file:///c:\Users\victo\Documents\Clases\Materiales módulos\Sistemas informáticos\MP0483 Sistemas informaticos 2023-2024 7s\UD5\escenario-examen.png" alt="Topología"></h2>
+<h2 id="-apartado-1--cálculo-de-subredes-ipv4">🔧 APARTADO 1 – Cálculo de subredes IPv4</h2>
+<p><strong>Puntuación: 1,0 punto</strong></p>
+<h3 id="enunciado">Enunciado:</h3>
+<p>A partir de las siguientes IPs y máscaras en formato CIDR, debes calcular para cada red:</p>
+<ul>
+<li>Dirección de red</li>
+<li>Dirección de broadcast</li>
+<li>Rango de direcciones IP válidas</li>
+</ul>
+<h3 id="redes-a-calcular-con-cidr">Redes a calcular (con CIDR):</h3>
+<table>
+<thead>
+<tr>
+<th>Red</th>
+<th>IP facilitada</th>
+<th>Máscara (CIDR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enlace R1–R2</td>
+<td>10.10.10.5</td>
+<td>/30</td>
+</tr>
+<tr>
+<td>Enlace R2–R3</td>
+<td>20.20.20.9</td>
+<td>/30</td>
+</tr>
+<tr>
+<td>LAN R1</td>
+<td>192.168.10.30</td>
+<td>/26</td>
+</tr>
+<tr>
+<td>LAN R2 (VLAN 10)</td>
+<td>192.168.20.60</td>
+<td>/25</td>
+</tr>
+<tr>
+<td>LAN R3</td>
+<td>192.168.30.14</td>
+<td>/27</td>
+</tr>
+<tr>
+<td>VLAN 20 (<em>Para apartado 4</em>)</td>
+<td>192.168.25.5</td>
+<td>/27</td>
+</tr>
+</tbody>
+</table>
+<h3 id="evidencias-a-entregar">Evidencias a entregar:</h3>
+<ul>
+<li>Documento con los <strong>6 cálculos completos</strong> (red, broadcast, rango).</li>
+<li>Captura o PDF con los resultados.</li>
+</ul>
+<hr>
+<h2 id="-apartado-2--configuración-de-direcciones-ip">🔧 APARTADO 2 – Configuración de direcciones IP</h2>
+<p><strong>Puntuación: 1,0 punto</strong></p>
+<h3 id="enunciado-1">Enunciado:</h3>
+<p>Configura las direcciones IP en las interfaces de los routers y en los PCs. Escoge las que quieras dentro del rango utilizables de cada red.
+Si no pudiste resolver el apartado anterior, utiliza estas <strong>direcciones IP alternativas distintas</strong>.</p>
+<h3 id="ips-alternativas">IPs alternativas:</h3>
+<h4 id="lan-r1-switch-s0">LAN R1 (Switch S0):</h4>
+<ul>
+<li>R1 Gi0/0 → <strong>10.1.1.1 255.255.255.0</strong></li>
+<li>PC0 → <strong>10.1.1.2 255.255.255.0</strong></li>
+<li>PC1 → <strong>10.1.1.3 255.255.255.0</strong></li>
+</ul>
+<h4 id="lan-r2-switch-s1--vlan-10">LAN R2 (Switch S1 – VLAN 10):</h4>
+<ul>
+<li>R2 Gi0/0 → <strong>10.2.1.1 255.255.255.0</strong></li>
+<li>PC1 → <strong>10.2.1.2 255.255.255.0</strong></li>
+<li>PC2 → <strong>10.2.1.3 255.255.255.0</strong></li>
+</ul>
+<h4 id="lan-r3-switch-s2">LAN R3 (Switch S2):</h4>
+<ul>
+<li>R3 Gi0/0 → <strong>10.3.1.1 255.255.255.0</strong></li>
+<li>PC1 → <strong>10.3.1.2 255.255.255.0</strong></li>
+<li>PC2 → <strong>10.3.1.3 255.255.255.0</strong></li>
+</ul>
+<h4 id="enlaces-entre-routers">Enlaces entre routers:</h4>
+<ul>
+<li>R1 Gi0/1 → <strong>172.16.1.1 255.255.255.0</strong></li>
+<li>R2 Gi0/1 → <strong>172.16.1.2 255.255.255.0</strong></li>
+<li>R2 Gi0/2 → <strong>172.16.2.1 255.255.255.0</strong></li>
+<li>R3 Gi0/1 → <strong>172.16.2.2 255.255.255.0</strong></li>
+</ul>
+<h3 id="evidencias-a-entregar-1">Evidencias a entregar:</h3>
+<ul>
+<li>Salida de <code>show ip interface brief</code> en cada router.</li>
+<li>Capturas de configuración IP de los PCs.</li>
+<li>Archivo <code>.pkt</code> funcionando.</li>
+</ul>
+<hr>
+<h2 id="-apartado-3--enrutamiento-estático">🔧 APARTADO 3 – Enrutamiento estático</h2>
+<p><strong>Puntuación: 2,0 puntos</strong></p>
+<h3 id="enunciado-2">Enunciado:</h3>
+<p>Configura las rutas estáticas necesarias en los tres routers para permitir la <strong>comunicación entre todas las redes</strong> (LANs y VLANs).</p>
+<h3 id="comando">Comando:</h3>
+<p><strong>Pseudocódigo:</strong></p>
+<pre><code>ip route &lt;red_destino&gt; &lt;máscara&gt; &lt;IP del siguiente salto&gt;
+</code></pre>
+<p><strong>Ejemplo:</strong></p>
+<pre><code>ip route 10.3.1.0 255.255.255.0 172.16.2.2
+</code></pre>
+<h3 id="evidencias-a-entregar-2">Evidencias a entregar:</h3>
+<ul>
+<li>Captura de <code>show ip route</code> en cada router.</li>
+<li>Al menos 3 capturas de pings entre PCs de diferentes redes.</li>
+</ul>
+<hr>
+<h2 id="-apartado-4--vlans-segmentación-sin-router-on-a-stick">🔧 APARTADO 4 – VLANs (segmentación sin router-on-a-stick)</h2>
+<p><strong>Puntuación: 1,0 punto</strong></p>
+<h3 id="enunciado-3">Enunciado:</h3>
+<p>Configura <strong>VLAN 10</strong> (Switch S0) y <strong>VLAN 20</strong> (Switch S0). La VLAN 10 se utilizará para la red ya existente (LAN R1); mientras que la VLAN 20 utilizará la red indicada en el apartado 1. Cada una debe conectarse a una <strong>interfaz física distinta del router R1</strong>.</p>
+<ul>
+<li>R1 usará:
+<ul>
+<li>Gi0/0 para VLAN 10</li>
+<li>Gi0/2 para VLAN 20</li>
+</ul>
+</li>
+</ul>
+<p><img src="file:///c:\Users\victo\Documents\Clases\Materiales módulos\Sistemas informáticos\MP0483 Sistemas informaticos 2023-2024 7s\UD5\escenario-examen.png" alt="Topología"></p>
+<p>Si no pudiste resolver el apartado 1, utiliza (a mayores de las ya proporcionadas) estas <strong>direcciones IP alternativas para la VLAN 20</strong>.</p>
+<h4 id="vlan-20-switch-s0">VLAN 20 (Switch S0):</h4>
+<ul>
+<li>R1 Gi0/2 → <strong>10.1.2.1 255.255.255.0</strong></li>
+<li>PC6 → <strong>10.1.2.2 255.255.255.0</strong></li>
+<li>PC7 → <strong>10.1.2.3 255.255.255.0</strong></li>
+</ul>
+<h3 id="pasos">Pasos:</h3>
+<ol>
+<li>Crea las VLANs en el switch.</li>
+<li>Asigna puertos: mitad inferior a la VLAN 10, mitad superior a la VLAN 20.</li>
+<li>Conecta los PCs y routers según la VLAN que les corresponda.</li>
+<li>Comprueba conectividad entre un PC de VLAN 10 y uno de VLAN 20.</li>
+</ol>
+<h3 id="comandos-útiles">Comandos útiles:</h3>
+<p><strong>Crear VLAN:</strong></p>
+<pre><code>vlan 20
+name NUEVA_RED
+</code></pre>
+<p><strong>Asignar puerto a VLAN:</strong></p>
+<pre><code>interface fa0/3
+switchport mode access
+switchport access vlan 20
+</code></pre>
+<h3 id="evidencias-a-entregar-3">Evidencias a entregar:</h3>
+<ul>
+<li>Salida de <code>show vlan brief</code> en cada switch.</li>
+<li>Captura de ping entre un PC de VLAN 10 y uno de VLAN 20.</li>
+<li>Respuesta a la siguiente pregunta: ¿Con esta configuración tienen conectividad los PCs de diferentes VLANs?, ¿por qué?</li>
+<li>Archivo <code>.pkt</code> con VLANs correctamente configuradas.</li>
+</ul>
+<hr>
+
+            
+            
+        </body>
+        </html>

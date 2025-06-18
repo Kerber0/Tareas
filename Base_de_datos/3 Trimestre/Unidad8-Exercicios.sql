@@ -271,8 +271,6 @@ foreign key (cod_conta) references contas (cod_conta)
 
 /* 01 */
 
-
-
 create TRIGGER numerorojos AFTER
 update on contas
 for EACH ROW
@@ -286,3 +284,19 @@ if new.saldo < 0 then
     end if;
 end//
 
+drop table nrojos;
+
+/* 02 */
+
+
+
+/* 03 */
+
+/*NO EXISTE LA TABLA LOG_BORRADOS HABRIA QUE CREARLA ANTES DE GUARDAR EL TRIGGER*/
+
+create trigger noticias after
+delete on noticias
+from each row 
+begin
+insert into log_borrados values(old.titulo, user(), now());
+end//
