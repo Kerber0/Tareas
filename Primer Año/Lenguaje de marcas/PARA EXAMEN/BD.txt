@@ -1,0 +1,103 @@
+CHULETA DE PROCEDIMIENTOS-FUNCIONES-CURSORES-TRIGGERS:
+
+TRIGGER:
+
+create tigger [nombre del trigger] [AFTER-BEFORE] [ACCION] on [nombre tabla]
+for each row
+begin
+[CUERPO DE PROCEDIMIENTO]
+end ..
+
+PROCEDIMIENTO:
+
+create procedure [nombre del procedimiento] ([parametros si son necesarios])
+begin
+	[cuerpo]
+end ..
+
+FUNCIONES:
+
+create function [nombre del procedimiento] ([parametros si son necesarios])
+returns [tipo de dato]
+|deterministic o no deterministic|
+begin
+[declare variables tipoDato]
+[cuerpo]
+end ..
+--------------------------------------------------------------------------------
+
+CHULETA DE COPIAS DE SEGURIDAD:
+
+mysqldump -u root -p |Base Datos| > |Nombre archivo| <--- Crea una copia de seguridad sin contener create DB
+
+mysqldump -u root -p |Base Datos| [Nombre Tabla] > |Nombre archivo| <--- Crea una copia de seguridad con unas tablas especificas sin contener create DB
+
+mysqldump -u root -p --all-databases > |Nombre archivo| <--- Crea una copia de seguridad de todas las BD almacenadas
+
+mysqldump -u root -p --databases |Base Datos| > |Nombre archivo| <--- Crea una copia de seguridad incluyendo el comando create DB
+
+mysqldump -u root -p --ignore-table = |Base Datos|.[Nombre tablas] > |Nombre archivo| <-- Crea un copia de seguridad ignorando las tablas introducidas
+
+mysqldump -u root -p |Base Datos| --no-data > |Nombre archivo| <-- Crea una copia de seguridad con solo la estructura de las tablas
+
+mysqldump -u root -p |Base Datos| [Nombre tabla] --where = "[Condiciones]" > |Nombre archivo|
+
+--------------------------------------------------------------------------------
+
+CHULETA EXPORTACION DE DATOS:
+
+1º Modificar en el archivo "my.ini" la linea (secure_file_priv) y dejarlo en (secure_file_priv="")
+
+select * from [Nombre tabla] into outfile "Nombre archivo" 
+	[FIELDS
+		[TERMINATED BY "\T"]              <---Indica el separador de los datos
+		[[OPTIINALLY] ENCLOSED BY "\""]     <---Indica el caracter que engloba el dato y si contiene optinally solo los datos tipo caracter tienen comillas
+		[ESCAPED BY "\\"]                 <---
+	]
+	[LINES
+		[STARTING BY ""]                  <---Indica como comienza la linea 
+		[TERMINATED BY "\N"]              <---Indica como termina la lina
+	]
+	[IGNORE numero LINES]                 <---Indica el numero de la linea el cual se va a ignorar
+	[(nombre_tablas,.....)];              <---Funciona como los values del "insert into" con los valores faltantes
+
+---------------------------------------------------------------------------------
+
+CHULETA IMPORTACION DE DATOS:
+
+truncate table [nombre] <- elimina contenido de tabla y reinicia contadores si hay
+
+load data [LOCAL] infile "[Nombre archivo]"
+	[REPLACE | IGNORE]
+	into table |Nombre tabla|
+	[FIELDS
+		[TERMINATED BY "\T"]
+		[[OPTIINALLY] ENCLOSED BY "\""] 
+		[ESCAPED BY "\\"]
+	]
+	[LINES
+		[STARTING BY ""]
+		[TERMINATED BY "\N"]
+	]
+	[IGNORE numero LINES]
+	[(nombre_tablas,.....)];
+
+---------------------------------------------------------------------------------
+
+CHUELTA CREACION DE USUARIO
+
+create user "[nombre usuarios]"@"[lugar conexion]"; <- crear usuario sin contraseña
+
+set password for "[nombre usuarios]"@"[lugar conexion]" = "[contraseña]"; <- settear contraseña de usuario
+
+create user "[nombre usuarios]"@"[lugar conexion]" identified by "[contraseña]"; <- crear usurio con contraseña asociada
+
+rename user "[nombre usuarios]"@"[lugar conexion]" to "[nuevo nombre]"; <- renombra usuario
+
+drop user "[nombre usuarios]"; <- elimina usuario
+
+grant all privileges on "*" to "[nombre usuarios]"@"[lugar conexion]"; <- da todos los permisos en toda BASE DE DATOS
+
+grant [acciones a autorizar] on [BD.[tablas]] to "[usuario]"@"[lugar conexion]"; <- da permisos personalizados en una BASE DE DATOS y tambien de tablas especificas
+
+revoke [acciones a denegar] on [BD.[tablas]] from "[usuario]"@"[lugar conexion]"; <- revoca permisos personalizados en una BASE DE DATOS y tambien de tablas especificas

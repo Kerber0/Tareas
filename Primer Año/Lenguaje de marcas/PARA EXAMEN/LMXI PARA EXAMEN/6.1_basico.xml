@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet href="sol_bolsa.xsl" type="text/xsl" ?>
+<Bolsa xmlns="http://www.labolsa.com"
+       dia="20-5-2025"
+       hora="12:38">
+  <Empresa indice="general">
+    <Nombre>General Motors</Nombre>
+    <Simbolo>GMO</Simbolo>
+    <Precio>48.875</Precio>
+  </Empresa>
+  <Empresa indice="tecno">
+    <Nombre>Adobe</Nombre>
+    <Simbolo>ADB</Simbolo>
+    <Precio>92.250</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>Cisco</Nombre>
+    <Simbolo>CIS</Simbolo>
+    <Precio>63.110</Precio>
+  </Empresa>
+  <Empresa indice="tecno">
+    <Nombre>Microsoft</Nombre>
+    <Simbolo>MSF</Simbolo>
+    <Precio>450.188</Precio>
+  </Empresa>
+  <Empresa indice="general">
+    <Nombre>Coca-Cola</Nombre>
+    <Simbolo>COC</Simbolo>
+    <Precio>71.775</Precio>
+  </Empresa>  
+  <Empresa indice="tecno">
+    <Nombre>Sun Microsystems</Nombre>
+    <Simbolo>SUN</Simbolo>
+    <Precio>45.119</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>Apple</Nombre>
+    <Simbolo>APL</Simbolo>
+    <Precio>195.273</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>Verizon</Nombre>
+    <Simbolo>43.55</Simbolo>
+    <Precio>195.273</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>NVIDIA</Nombre>
+    <Simbolo>NVDA</Simbolo>
+    <Precio>131.295</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>McDonalds</Nombre>
+    <Simbolo>MCD</Simbolo>
+    <Precio>314.578</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>3M</Nombre>
+    <Simbolo>MMM</Simbolo>
+    <Precio>147.62</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>IBM</Nombre>
+    <Simbolo>IBM</Simbolo>
+    <Precio>258.630</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>Amazon.com</Nombre>
+    <Simbolo>AMZN</Simbolo>
+    <Precio>200.99</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>Walmart</Nombre>
+    <Simbolo>WMT</Simbolo>
+    <Precio>96.387</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>JPMorgan</Nombre>
+    <Simbolo>JPM</Simbolo>
+    <Precio>260.71</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>Goldman Sachs</Nombre>
+    <Simbolo>GS</Simbolo>
+    <Precio>598.548</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>Ford</Nombre>
+    <Simbolo>F</Simbolo>
+    <Precio>12.45</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>Intel</Nombre>
+    <Simbolo>INT</Simbolo>
+    <Precio>20.557</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>General Electric</Nombre>
+    <Simbolo>GE</Simbolo>
+    <Precio>102.45</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>Nike</Nombre>
+    <Simbolo>NKE</Simbolo>
+    <Precio>60.02</Precio>
+  </Empresa>
+    <Empresa indice="general">
+    <Nombre>Boeing</Nombre>
+    <Simbolo>BA</Simbolo>
+    <Precio>202.38</Precio>
+  </Empresa>
+    <Empresa indice="tecno">
+    <Nombre>Dell Tech</Nombre>
+    <Simbolo>DELL</Simbolo>
+    <Precio>112.114</Precio>
+  </Empresa>
+</Bolsa>
