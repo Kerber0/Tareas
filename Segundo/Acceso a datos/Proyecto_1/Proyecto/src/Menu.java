@@ -32,13 +32,10 @@ public class Menu {
 
     }
 
-
     private static void menu() {
         int opcion;
-
         do {
             opcion = in.inputInt(menuText);
-
             switch (opcion) {
                 case 1: {
                     String nombreEspecialidad = in.input("Ingrese el nombre de la especialidad");
@@ -65,55 +62,46 @@ public class Menu {
                     MySqlConnection.crearPaciente(nombre, email, fechaNacimiento);
                     break;
                 }
-
                 case 5: {
                     int id = in.inputInt("ID: ");
                     MySqlConnection.eliminarPaciente(id);
                     break;
                 }
-
                 case 6: {
                     String nombre = in.input("Nombre: ");
                     String descripcion = in.input("Descripcion: ");
                     String nombreEspecialidad = in.input("Nombre de la especialidad: ");
                     String nifMedico = in.inputDNI("Nif medico: ");
-                    FusionSql.crearTratamiento(nombre, descripcion, nombreEspecialidad, nifMedico);
+                    DualConnection.getDualInstance().crearTratamiento(nombre, descripcion, nombreEspecialidad, nifMedico);
                     break;
                 }
-
                 case 7: {
                     String nombre = in.input("Nombre: ");
-                    FusionSql.eliminarTratamientoPorNombre(nombre);
+                    DualConnection.getDualInstance().eliminarTratamientoPorNombre(nombre);
                     break;
                 }
-
                 case 8: {
                     int cantidad = in.inputInt("Cantidad de pacientes: ");
                     MySqlConnection.listarTratamientosConPocosPacientes(cantidad);
                     break;
                 }
-
                 case 9: {
                     MySqlConnection.obtenerTotalCitasPorPaciente();
                     break;
                 }
-
                 case 10: {
                     PostgreConnection.obtenerCantidadTratamientosPorSala();
                     break;
                 }
-
                 case 11: {
-                    FusionSql.listarTratamientosConEspecialidadYMedico();
+                    DualConnection.getDualInstance().listarTratamientosConEspecialidadYMedico();
                     break;
                 }
-
                 case 12: {
                     int idEspecialidad = in.inputInt("ID de la especialidad: ");
-                    FusionSql.obtenerPacientesPorEspecialidad(idEspecialidad);
+                    DualConnection.getDualInstance().obtenerPacientesPorEspecialidad(idEspecialidad);
                     break;
                 }
-
                 case 0: {
                     System.out.println("Saliendo del sistema...");
                     break;
@@ -122,15 +110,10 @@ public class Menu {
                     System.out.println("Opción no válida. Intente nuevamente.");
                     break;
                 }
-
-
             }
-
-
         } while (opcion != 0);
-
+        DualConnection.getDualInstance().close();
     }
-
 }
 
 

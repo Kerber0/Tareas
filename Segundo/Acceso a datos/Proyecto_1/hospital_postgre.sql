@@ -97,16 +97,16 @@ INSERT INTO hospital.especialidades (nombre_especialidad) VALUES
 
 -- Médicos (con tipo compuesto de contacto)
 INSERT INTO hospital.medicos (nombre_medico, contacto) VALUES
-('Dr. Luis Pérez', ROW('Luis Pérez', '12345678A', '555-1111', 'luis.perez@hosp.com')),
-('Dra. Elena Soto', ROW('Elena Soto', '23456789B', '555-2222', 'elena.soto@hosp.com')),
-('Dr. Javier Mora', ROW('Javier Mora', '34567890C', '555-3333', 'j.mora@hosp.com')),
-('Dra. Carmen Ruiz', ROW('Carmen Ruiz', '45678901D', '555-4444', 'c.ruiz@hosp.com')),
-('Dr. Andrés Vidal', ROW('Andrés Vidal', '56789012E', '555-5555', 'a.vidal@hosp.com')),
-('Dra. Patricia León', ROW('Patricia León', '67890123F', '555-6666', 'p.leon@hosp.com')),
-('Dr. Tomás Vega', ROW('Tomás Vega', '78901234G', '555-7777', 't.vega@hosp.com')),
-('Dra. Laura Campos', ROW('Laura Campos', '89012345H', '555-8888', 'l.campos@hosp.com')),
-('Dr. Miguel Arroyo', ROW('Miguel Arroyo', '90123456I', '555-9999', 'm.arroyo@hosp.com')),
-('Dra. Sonia Duarte', ROW('Sonia Duarte', '01234567J', '555-0000', 's.duarte@hosp.com'));
+('Luis Pérez', ROW('Luis Pérez', '12345678A', '555-1111', 'luis.perez@hosp.com')),
+('Elena Soto', ROW('Elena Soto', '23456789B', '555-2222', 'elena.soto@hosp.com')),
+('Javier Mora', ROW('Javier Mora', '34567890C', '555-3333', 'j.mora@hosp.com')),
+('Carmen Ruiz', ROW('Carmen Ruiz', '45678901D', '555-4444', 'c.ruiz@hosp.com')),
+('Andrés Vidal', ROW('Andrés Vidal', '56789012E', '555-5555', 'a.vidal@hosp.com')),
+('Patricia León', ROW('Patricia León', '67890123F', '555-6666', 'p.leon@hosp.com')),
+('Tomás Vega', ROW('Tomás Vega', '78901234G', '555-7777', 't.vega@hosp.com')),
+('Laura Campos', ROW('Laura Campos', '89012345H', '555-8888', 'l.campos@hosp.com')),
+('Miguel Arroyo', ROW('Miguel Arroyo', '90123456I', '555-9999', 'm.arroyo@hosp.com')),
+('Sonia Duarte', ROW('Sonia Duarte', '01234567J', '555-0000', 's.duarte@hosp.com'));
 
 -- Tratamientos
 INSERT INTO hospital.tratamientos (id_medico, id_especialidad) VALUES

@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class Inputs {
-    static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     String input(String text) {
         boolean textcorrect = false;
@@ -21,7 +21,7 @@ public class Inputs {
         return resultado;
     }
 
-    Integer inputInt(String text) {
+    int inputInt(String text) {
         int num = -1;
         boolean valido = false;
 
