@@ -1,9 +1,12 @@
 import java.time.LocalDate;
 
 public class Menu {
-    static Inputs in = new Inputs();
+    public static Inputs in = new Inputs();
 
-    static final String menuText = """
+    private static final String menuText = """
+            
+              ═══════════════════════════════════════════════════════════════
+            
             ╔══════════════════════════════════════════════════════════════════╗
             ║                   SISTEMA DE GESTIÓN MÉDICA                      ║
             ╠══════════════════════════════════════════════════════════════════╣
@@ -39,39 +42,39 @@ public class Menu {
             switch (opcion) {
                 case 1: {
                     String nombreEspecialidad = in.input("Ingrese el nombre de la especialidad");
-                    PostgreConnection.crearEspecialidad(nombreEspecialidad);
+                    PostgreConnection.getInstance().crearEspecialidad(nombreEspecialidad);
                     break;
                 }
                 case 2: {
                     String nombreMedico = in.input("Nombre: ");
-                    String nif = in.inputDNI("NIF: ");
+                    String nif = in.input("NIF: ");
                     int telefono = in.inputInt("Telefono: ");
                     String email = in.inputEmail("Email: ");
-                    PostgreConnection.crearMedico(nombreMedico, nif, telefono, email);
+                    PostgreConnection.getInstance().crearMedico(nombreMedico, nif, telefono, email);
                     break;
                 }
                 case 3: {
                     int id = in.inputInt("Ingrese el id del medico a eliminar: ");
-                    PostgreConnection.eliminarMedico(id);
+                    PostgreConnection.getInstance().eliminarMedico(id);
                     break;
                 }
                 case 4: {
                     String nombre = in.input("Nombre: ");
                     String email = in.inputEmail("Email: ");
                     LocalDate fechaNacimiento = in.inputFechaNacimiento("Fecha de nacimiento: ");
-                    MySqlConnection.crearPaciente(nombre, email, fechaNacimiento);
+                    MySqlConnection.getInstance().crearPaciente(nombre, email, fechaNacimiento);
                     break;
                 }
                 case 5: {
                     int id = in.inputInt("ID: ");
-                    MySqlConnection.eliminarPaciente(id);
+                    MySqlConnection.getInstance().eliminarPaciente(id);
                     break;
                 }
                 case 6: {
                     String nombre = in.input("Nombre: ");
                     String descripcion = in.input("Descripcion: ");
                     String nombreEspecialidad = in.input("Nombre de la especialidad: ");
-                    String nifMedico = in.inputDNI("Nif medico: ");
+                    String nifMedico = in.input("Nif medico: ");
                     DualConnection.getDualInstance().crearTratamiento(nombre, descripcion, nombreEspecialidad, nifMedico);
                     break;
                 }
@@ -82,15 +85,15 @@ public class Menu {
                 }
                 case 8: {
                     int cantidad = in.inputInt("Cantidad de pacientes: ");
-                    MySqlConnection.listarTratamientosConPocosPacientes(cantidad);
+                    MySqlConnection.getInstance().listarTratamientosConPocosPacientes(cantidad);
                     break;
                 }
                 case 9: {
-                    MySqlConnection.obtenerTotalCitasPorPaciente();
+                    MySqlConnection.getInstance().obtenerTotalCitasPorPaciente();
                     break;
                 }
                 case 10: {
-                    PostgreConnection.obtenerCantidadTratamientosPorSala();
+                    PostgreConnection.getInstance().obtenerCantidadTratamientosPorSala();
                     break;
                 }
                 case 11: {

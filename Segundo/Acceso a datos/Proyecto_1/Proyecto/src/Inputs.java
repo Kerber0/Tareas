@@ -37,40 +37,6 @@ public class Inputs {
         return num;
     }
 
-    String inputDNI(String text) {
-        boolean valido = false;
-        String dni = "";
-
-        while (!valido) {
-            System.out.println(text);
-            dni = sc.nextLine().toUpperCase().trim();
-
-            if (dni.isEmpty()) {
-                System.out.println("Error: Debe ingresar un DNI.");
-                continue;
-            }
-
-            // Verificar formato: 8 números + 1 letra
-            if (!dni.matches("\\d{8}[A-Z]")) {
-                System.out.println("Error: El formato debe ser 8 dígitos seguidos de una letra. Ejemplo: 12345678Z");
-                continue;
-            }
-
-            // Validar letra del DNI
-            String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-            int numero = Integer.parseInt(dni.substring(0, 8));
-            char letraCorrecta = letras.charAt(numero % 23);
-
-            if (dni.charAt(8) != letraCorrecta) {
-                System.out.println("Error: La letra no coincide con el número. Debería ser " + letraCorrecta);
-            } else {
-                valido = true;
-            }
-        }
-
-        return dni;
-    }
-
     String inputEmail(String text) {
         boolean valido = false;
         String email = "";
@@ -134,9 +100,5 @@ public class Inputs {
 
         return fechaNacimiento;
     }
-
-
-
-
 
 }

@@ -1,11 +1,14 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.swing.plaf.PanelUI;
+import java.security.PublicKey;
+import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MySqlConnection {
-    private static Connection conn;
+    private static MySqlConnection instance;
+    private Connection conn;
     private final String usuario = "root";
     private final String clave = "abc123";
     private final String url = "jdbc:mysql://localhost:3306/hospital_mysql";
@@ -18,19 +21,47 @@ public class MySqlConnection {
         }
     }
 
-    public static Connection getSqlInstance() {
-        if (conn == null) {
-            new MySqlConnection();
+    public static MySqlConnection getInstance() {
+        if (instance == null) {
+            instance = new MySqlConnection();
         }
-        return conn;
+        return instance;
     }
 
+    public void setAutoCommit(boolean estado) {
+        try {
+            conn.setAutoCommit(estado);
+        } catch (SQLException e) {
+            System.out.println("Fallo en autocomit: " + e.getMessage());
+        }
+    }
 
-    public static void crearPaciente(String nombre, String email, LocalDate fechaNacimiento) {
+    public void commit() throws SQLException {
+        conn.commit();
+    }
+
+    public void rollback() {
+        try {
+            conn.rollback();
+        } catch (SQLException e) {
+            System.out.println("ERROR al hacer ROLLBACK en MySQL: " + e.getMessage());
+        }
+    }
+
+    public void close() {
+        try {
+            conn.close();
+            System.out.println("Conexión MySQL cerrada.");
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar MySql: " + e.getMessage());
+        }
+    }
+
+    public void crearPaciente(String nombre, String email, LocalDate fechaNacimiento) {
         final String sql = """
                 INSERT INTO pacientes(nombre, email, fecha_nacimiento)
                 VALUES (?, ?, ?)""";
-        try (var ps = getSqlInstance().prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS)) {
+        try (var ps = conn.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, nombre);
             ps.setString(2, email);
             ps.setDate(3, java.sql.Date.valueOf(fechaNacimiento));
@@ -50,11 +81,11 @@ public class MySqlConnection {
 
     }
 
-    public static void eliminarPaciente(int id) {
+    public void eliminarPaciente(int id) {
         final String sql = """
                 DELETE FROM pacientes
                 WHERE id_paciente = ?""";
-        try (var ps = getSqlInstance().prepareStatement(sql)) {
+        try (var ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             int filas = ps.executeUpdate();
             if (filas > 0) {
@@ -67,14 +98,7 @@ public class MySqlConnection {
         }
     }
 
-/*Listar tratamientos (menos de X pacientes asignados) (MySQL)
-
-
-Mediante una única consulta se tendrá que obtener el conjunto de filas resultante
-y mostrar el nombre de los tratamientos junto con su stock.
-*/
-
-    public static void listarTratamientosConPocosPacientes(int cantidad) {
+    public void listarTratamientosConPocosPacientes(int cantidad) {
         final String sql = """
                 SeLEcT t.nombre_tratamiento,
                        COUNT(pt.id_paciente) AS total_pacientes
@@ -86,7 +110,7 @@ y mostrar el nombre de los tratamientos junto con su stock.
                 ORDER BY total_pacientes ASC;
                 """;
 
-        try (var ps = getSqlInstance().prepareStatement(sql)) {
+        try (var ps = conn.prepareStatement(sql)) {
             ps.setInt(1, cantidad);
 
             try (var rs = ps.executeQuery()) {
@@ -112,20 +136,14 @@ y mostrar el nombre de los tratamientos junto con su stock.
         }
     }
 
-
-
-    /*Obtener el total de citas realizadas por cada paciente (MySQL)
-Mediante una consulta se tendrá que obtener toda la información e imprimir por pantalla:
-el nombre del paciente junto con el número de citas registradas.*/
-
-    public static void obtenerTotalCitasPorPaciente() {
+    public void obtenerTotalCitasPorPaciente() {
         final String sql = """
                 SELECT pacientes.nombre , COUNT(citas.id_paciente) AS total_citas
                 FROM pacientes JOIN citas
                 ON pacientes.id_paciente = citas.id_paciente
                 GROUP BY pacientes.nombre;
                 """;
-        try (var ps = getSqlInstance().prepareStatement(sql)) {
+        try (var ps = conn.prepareStatement(sql)) {
             try (ResultSet rs = ps.executeQuery()) {
                 System.out.println("Nombre Paciente\t\t\tCantidad Citas");
                 System.out.println("-------------------------------------");
@@ -138,6 +156,118 @@ el nombre del paciente junto con el número de citas registradas.*/
             }
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public int addTratamiento(String nombreTratamiento, String descripcion,int idMedico, int idEspecialidad) throws SQLException {
+        final String sql = """
+        INSERT INTO tratamientos (nombre_tratamiento, descripcion,id_medico, id_especialidad)
+        VALUES (?, ?, ?, ?)
+    """;
+        try (var ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, nombreTratamiento);
+            ps.setString(2, descripcion);
+            ps.setInt(3, idMedico);
+            ps.setInt(4, idEspecialidad);
+            ps.executeUpdate();
+            try (var rs = ps.getGeneratedKeys()) {
+                if (rs.next()) return rs.getInt(1);
+                throw new IllegalStateException("No se obtuvo ID generado en MySQL.");
+            }
+        }
+    }
+
+
+    public int getIdTratamiento(String nombre) throws SQLException {
+        final String sql = """
+                SELECT id_tratamiento
+                FROM tratamientos 
+                WHERE nombre_tratamiento = ?
+                """;
+        try (var ps = conn.prepareStatement(sql)) {
+            ps.setString(1, nombre);
+            try (var rs = ps.executeQuery()) {
+                if (rs.next()) return rs.getInt(1);
+                throw new IllegalStateException("Tratamiento no encontrado: " + nombre);
+            }
+        }
+    }
+
+    public void deleteTratamiento(int idEliminar) throws SQLException {
+        final String sql = """
+                DELETE FROM tratamientos
+                WHERE id_tratamiento = ?
+                """;
+        try (var ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, idEliminar);
+            int borrado = ps.executeUpdate(); // una sola vez
+            if (borrado == 0) {
+                throw new SQLException("No se borró ningún registro en MySQL.");
+            }
+        }
+    }
+
+    public void setNombreDescripcion(ArrayList<TratamientoInfo> lista) throws SQLException {
+        final String sql = """
+                SELECT id_tratamiento, nombre_tratamiento, descripcion
+                FROM tratamientos
+                """;
+        Map<Integer, TratamientoInfo> mapaDB = new HashMap<>();
+
+        try (var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id_tratamiento");
+                String nombre = rs.getString("nombre_tratamiento");
+                String descripcion = rs.getString("descripcion");
+
+                mapaDB.put(id, new TratamientoInfo(id, nombre, descripcion));
+            }
+        }
+
+        for (TratamientoInfo t : lista) {
+            TratamientoInfo tDB = mapaDB.get(t.getIdTratamiento());
+            if (tDB != null) {
+                t.setNombreTratamiento(tDB.getNombreTratamiento());
+                t.setDescripcion(tDB.getDescripcion());
+            }
+        }
+    }
+
+    public void getDatosPaciente(int idEspecialidad) throws SQLException {
+        final String sql = """
+                SELECT p.id_paciente,
+                       p.nombre AS nombre_paciente,
+                       t.nombre_tratamiento
+                FROM pacientes p
+                JOIN pacientes_tratamientos pt ON pt.id_paciente = p.id_paciente
+                JOIN tratamientos t ON t.id_tratamiento = pt.id_tratamiento
+                WHERE t.id_especialidad = ?
+                ORDER BY p.id_paciente, t.nombre_tratamiento;
+                """;
+
+        try (var ps1 = conn.prepareStatement(sql)) {
+            ps1.setInt(1, idEspecialidad);
+            try (var rs1 = ps1.executeQuery()) {
+                boolean hayResultados = false;
+                while (rs1.next()) {
+                    hayResultados = true;
+                    int idPaciente = rs1.getInt("id_paciente");
+                    String nombrePaciente = rs1.getString("nombre_paciente");
+                    String nombreTratamiento = rs1.getString("nombre_tratamiento");
+
+                    System.out.println("Paciente " + idPaciente + ": " + nombrePaciente
+                            + " — Tratamiento: " + nombreTratamiento);
+
+                }
+                if (!hayResultados) {
+                    System.out.println("No hay pacientes asociados a esta especialidad.");
+                }
+
+            }
+
+
         }
     }
 
