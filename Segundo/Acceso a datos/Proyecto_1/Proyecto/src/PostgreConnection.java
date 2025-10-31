@@ -1,6 +1,5 @@
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class PostgreConnection {
     private static PostgreConnection instance;
@@ -120,26 +119,32 @@ public class PostgreConnection {
 
     public void obtenerCantidadTratamientosPorSala() {
         final String sql = """
-                SELECT hospital.salas.nombre_sala,
-                COUNT(hospital.salas_tratamientos.id_tratamiento) AS total_tratamientos
-                FROM hospital.salas LEFT JOIN hospital.salas_tratamientos
-                ON hospital.salas.id_sala = hospital.salas_tratamientos.id_sala
-                GROUP BY hospital.salas.nombre_sala;
-                """;
-        try (var ps = conn.prepareStatement(sql)) {
-            try (ResultSet rs = ps.executeQuery()) {
-                System.out.println("Nombre Sala\t\t\tCantidad Tratamientos");
-                System.out.println("-------------------------------------");
-                while (rs.next()) {
-                    String nombre = rs.getString("nombre_sala");
-                    int totalTratamientos = rs.getInt("total_tratamientos");
-                    System.out.println(nombre + "\t\t" + totalTratamientos);
-                }
+            SELECT s.nombre_sala,
+                   COUNT(st.id_tratamiento) AS total_tratamientos
+            FROM hospital.salas s
+            LEFT JOIN hospital.salas_tratamientos st
+              ON s.id_sala = st.id_sala
+            GROUP BY s.nombre_sala
+            ORDER BY total_tratamientos DESC;
+            """;
+
+        try (var ps = conn.prepareStatement(sql);
+             var rs = ps.executeQuery()) {
+
+            System.out.printf("%-35s | %15s%n", "Nombre Sala", "Cantidad Tratamientos");
+            System.out.println("--------------------------------------------------------");
+
+            while (rs.next()) {
+                String nombre = rs.getString("nombre_sala");
+                int totalTratamientos = rs.getInt("total_tratamientos");
+                System.out.printf("%-35s | %10d%n", nombre, totalTratamientos);
             }
+
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
 
     public int getEspecialidadId(String nombreEspecialidad) throws SQLException {
         final String sql = """
@@ -188,7 +193,7 @@ public class PostgreConnection {
 
     }
 
-    public void deleteTratamienot(int idEliminar) throws SQLException {
+    public void deleteTratamiento(int idEliminar) throws SQLException {
         final String sql = """
                 DELETE FROM hospital.tratamientos
                 WHERE id_tratamiento = ?

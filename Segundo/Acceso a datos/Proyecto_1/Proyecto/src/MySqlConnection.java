@@ -100,15 +100,15 @@ public class MySqlConnection {
 
     public void listarTratamientosConPocosPacientes(int cantidad) {
         final String sql = """
-                SeLEcT t.nombre_tratamiento,
-                       COUNT(pt.id_paciente) AS total_pacientes
-                FROM tratamientos t
-                LEFT JOIN pacientes_tratamientos pt
-                  ON t.id_tratamiento = pt.id_tratamiento
-                GROUP BY t.nombre_tratamiento
-                HAVING COUNT(pt.id_paciente) < ?
-                ORDER BY total_pacientes ASC;
-                """;
+            SELECT t.nombre_tratamiento,
+                   COUNT(pt.id_paciente) AS total_pacientes
+            FROM tratamientos t
+            LEFT JOIN pacientes_tratamientos pt
+              ON t.id_tratamiento = pt.id_tratamiento
+            GROUP BY t.nombre_tratamiento
+            HAVING COUNT(pt.id_paciente) < ?
+            ORDER BY total_pacientes ASC;
+            """;
 
         try (var ps = conn.prepareStatement(sql)) {
             ps.setInt(1, cantidad);
@@ -116,14 +116,14 @@ public class MySqlConnection {
             try (var rs = ps.executeQuery()) {
                 boolean hayResultados = false;
 
-                System.out.println("Tratamiento\t\t\tPacientes");
-                System.out.println("-------------------------------------");
+                System.out.printf("%-35s | %s%n", "Tratamiento", "Pacientes");
+                System.out.println("-----------------------------------------------");
 
                 while (rs.next()) {
                     hayResultados = true;
                     String nombre = rs.getString("nombre_tratamiento");
                     int total = rs.getInt("total_pacientes");
-                    System.out.println(nombre + "\t\t" + total);
+                    System.out.printf("%-35s | %5d%n", nombre, total);
                 }
 
                 if (!hayResultados) {
@@ -135,6 +135,7 @@ public class MySqlConnection {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
 
     public void obtenerTotalCitasPorPaciente() {
         final String sql = """

@@ -1,7 +1,5 @@
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 @SuppressWarnings("resource")
 public final class DualConnection {
@@ -85,7 +83,7 @@ public final class DualConnection {
 
             begin();
             mysql().deleteTratamiento(idEliminar);
-            postgres().deleteTratamienot(idEliminar);
+            postgres().deleteTratamiento(idEliminar);
             commitBoth();
             System.out.println("Tratamiento borrado satisfactoriamente.");
         } catch (Exception e) {

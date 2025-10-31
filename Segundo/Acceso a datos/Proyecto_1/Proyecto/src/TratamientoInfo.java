@@ -45,7 +45,7 @@ public class TratamientoInfo {
 
     @Override
     public String toString() {
-        return "┌───────────────────────────────────────────────┐\n" +
+        return "┌─────────────────────────────────────────────────────────────┐\n" +
                 "│ Tratamiento: " + nombreTratamiento + "\n" +
                 "│ ID Tratamiento: " + id_tratamiento + "\n" +
                 "│ Descripción: " + descripcion + "\n" +
@@ -53,7 +53,7 @@ public class TratamientoInfo {
                 "│ ID Especialidad: " + id_especialidad + "\n" +
                 "│ Médico: " + nombreMedico + "\n" +
                 "│ ID Médico: " + id_medico + "\n" +
-                "└───────────────────────────────────────────────┘\n";
+                "└─────────────────────────────────────────────────────────────┘\n";
     }
 
 }
