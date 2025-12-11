@@ -5,7 +5,7 @@ public class PostgreConnection {
     private static PostgreConnection instance;
     private Connection conn;
     private final String usuario = "postgres";
-    private final String clave = "abc123";
+    private final String clave = "abc123.";
     private final String url = "jdbc:postgresql://localhost:5432/hospital_postgre";
 
     private PostgreConnection() {
